@@ -1,1 +1,2 @@
-empty directory
+<?php
+echo "Hello World";
