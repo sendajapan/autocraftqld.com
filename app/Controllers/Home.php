@@ -27,8 +27,7 @@ class Home extends BaseController
     }
 
     public function index(): string
-    {
-   
+    {   
         
         //drop down filters  
         $data['makes'] = $this->vehiclemodel->distinct()->where('make<>','')->orderBy('make','ASC')->findColumn('make');
