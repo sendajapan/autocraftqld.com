@@ -40,7 +40,7 @@ class VehicleImportController extends BaseController
     {
         $db = db_connect();
         $already_uploaded = $db->query('SELECT group_concat(veh_id) as result FROM tbl_vehicles')->getResultArray();
-        $url = 'http://senda.us/autocraft/avisnew/page_include/scripts/autohaus_korea_website_stock.php';
+        $url = 'http://senda.us/autocraft/avisnew/page_include/scripts/autocraft_qld_website_stock.php';
         $data = $already_uploaded[0]['result'];
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
