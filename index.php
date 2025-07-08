@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 /*
  *---------------------------------------------------------------
@@ -55,6 +54,3 @@ $paths = new Config\Paths();
 require $paths->systemDirectory . '/Boot.php';
 
 exit(CodeIgniter\Boot::bootWeb($paths));
-=======
-echo "Hello Autocraft QLD";
->>>>>>> da3b03ab6f994b81caac35eb71e3ae33a7911364
