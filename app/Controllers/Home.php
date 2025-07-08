@@ -28,24 +28,6 @@ class Home extends BaseController
 
     public function index(): string
     {
-        echo '<h1>Debugging Information</h1>';
-
-        // Check Base URL
-        echo '<h2>Base URL Check:</h2>';
-        echo 'Configured Base URL: ' . config('App')->baseURL . '<br>';
-        echo 'site_url() output: ' . site_url() . '<br><br>';
-
-        // Check Database Connection
-        echo '<h2>Database Connection Check:</h2>';
-        try {
-            $db = db_connect();
-            $db->connect();
-            echo '<strong style="color:green;">Database connection successful!</strong>';
-        } catch (\Exception $e) {
-            echo '<strong style="color:red;">Database connection failed!</strong><br>';
-            echo 'Error: ' . $e->getMessage();
-        }
-        exit; // Stop the page from loading further
    
         
         //drop down filters  
