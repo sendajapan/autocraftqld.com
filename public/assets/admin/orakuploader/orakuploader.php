@@ -10,8 +10,8 @@ $dirback = $dirback_calc != '' ? '..'.$dirback_calc : "../";
 // $main_path = 'F:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/';
 // $thumbnail_path = 'F:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/thumbs/';
 
-$main_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/';
-$thumbnail_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/thumbs/';
+$main_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock';
+$thumbnail_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/thumbs';
 
 if(isset($_GET['delete']))
 {
