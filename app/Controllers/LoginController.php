@@ -27,6 +27,8 @@ class LoginController extends BaseController
                 ],
             ];
 
+				echo 'user';
+				exit;
             if (!$this->validate($rules, $errors)) {
                 return view('login', [
                     "validation" => $this->validator,
