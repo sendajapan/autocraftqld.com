@@ -35,9 +35,19 @@ $routes->post('sort-by', 'Stock::set_sort_by');
 $routes->get('/sitemap.xml', 'SitemapController::index');
 
 
-$routes->match(['get', 'post'], 'login', 'LoginController::login');
-$routes->get('logout', 'LoginController::logout');
-$routes->get('login', 'LoginController::login');
+$routes->match(['get', 'post'], 'login', 'Auth::login', ['filter' => 'noauth']);
+$routes->get('logout', 'Auth::logout');
+
+$routes->group('admin',['filter' => 'auth'],function($routes){
+    // admin controller
+    $routes->get('/', function(){
+        if (session()->get('isLoggedIn')) {
+            return redirect()->to('admin/dashboard');
+        }else{
+            return redirect()->to('login');
+        }
+    });   
+
 
 /*----------ADMIN----------*/
 
