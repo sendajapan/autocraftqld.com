@@ -739,7 +739,7 @@
                     </div>
                 </div>
                 <p class="testimonial-body">
-                    <?= strlen($item['testimonial_desc']) > 100 ? substr($item['testimonial_desc'], 0, 100) . '...' : $item['testimonial_desc'] ?>
+                    <?= strlen($item['testimonial_desc']) > 100 ? substr($item['testimonial_desc'], 0, 10000) . '...' : $item['testimonial_desc'] ?>
                 </p>
                 <div class="star-rating">
                     <i class="fa-solid fa-star"></i>
