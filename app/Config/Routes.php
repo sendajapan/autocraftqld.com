@@ -35,9 +35,9 @@ $routes->post('sort-by', 'Stock::set_sort_by');
 $routes->get('/sitemap.xml', 'SitemapController::index');
 
 
-/*$routes->match(['get', 'post'], 'login', 'LoginController::login');
+$routes->match(['get', 'post'], 'login', 'LoginController::login');
 $routes->get('logout', 'LoginController::logout');*/
-//$routes->get('login', 'LoginController::login');
+$routes->get('login', 'LoginController::login');
 
 /*----------ADMIN----------*/
 
