@@ -96,30 +96,30 @@ function stock_meta_drive($drive){
 
 
 
-function seven_day_return_meta(){
-    $title = "7-Day Money-Back Guarantee | Autocraft QLD";
-    $meta_description = 'Shop with confidence at Autocraft QLD with our 7-day money-back guarantee. Learn more about our hassle-free return policy.';
-    $keywords = 'Autocraft QLD, 7-day return, money-back guarantee, car return policy';
-    return meta_tags($title, $meta_description, $keywords);
-}
+// function seven_day_return_meta(){
+//     $title = "7-Day Money-Back Guarantee | Autocraft QLD";
+//     $meta_description = 'Shop with confidence at Autocraft QLD with our 7-day money-back guarantee. Learn more about our hassle-free return policy.';
+//     $keywords = 'Autocraft QLD, 7-day return, money-back guarantee, car return policy';
+//     return meta_tags($title, $meta_description, $keywords);
+// }
 
-function car_finance_meta(){
+// function car_finance_meta(){
 
-	$title = "Car Finance Options | Autocraft QLD";
-	$meta_description = 'Explore flexible car finance options at Autocraft QLD. We offer competitive rates and personalized plans to help you drive away in your dream car.';
-    $keywords = 'car finance, auto loans, vehicle financing, car finance QLD, bad credit car loans, car loan rates';
+// 	$title = "Car Finance Options | Autocraft QLD";
+// 	$meta_description = 'Explore flexible car finance options at Autocraft QLD. We offer competitive rates and personalized plans to help you drive away in your dream car.';
+//     $keywords = 'car finance, auto loans, vehicle financing, car finance QLD, bad credit car loans, car loan rates';
 
-	return meta_tags($title, $meta_description, $keywords);
-}
+// 	return meta_tags($title, $meta_description, $keywords);
+// }
 
-function warranty_meta(){
+// function warranty_meta(){
 
-	$title = "Our Vehicle Warranty | Autocraft QLD";
-	$meta_description = 'Learn about the comprehensive warranty offered by Autocraft QLD. We provide peace of mind with every vehicle purchase, ensuring quality and reliability.';
-    $keywords = 'Autocraft QLD warranty, vehicle warranty, car warranty QLD, used car warranty, new car warranty, comprehensive coverage';
+// 	$title = "Our Vehicle Warranty | Autocraft QLD";
+// 	$meta_description = 'Learn about the comprehensive warranty offered by Autocraft QLD. We provide peace of mind with every vehicle purchase, ensuring quality and reliability.';
+//     $keywords = 'Autocraft QLD warranty, vehicle warranty, car warranty QLD, used car warranty, new car warranty, comprehensive coverage';
 
-	return meta_tags($title, $meta_description, $keywords);
-}
+// 	return meta_tags($title, $meta_description, $keywords);
+// }
 
 function meta_tags($title, $meta_description, $keywords){
 
