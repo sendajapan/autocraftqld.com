@@ -41,6 +41,7 @@ class LoginController extends BaseController
                 ];
                 $user = $model->where('email',$email)->first();
 				print_r($user);
+				exit;
                 if (is_array($user)) {
                     $db_pass = $user['password'];
                     $ver = password_verify($password, $db_pass);
