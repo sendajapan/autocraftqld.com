@@ -34,7 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        
+        'auth'          => \App\Filters\AuthFilter::class,
     ];
 
     /**
@@ -73,7 +73,6 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
-            'session' => ['except' => ['admin','login', 'logout', '/', 'car/*', 'stock', 'contact', 'about', 'warranty', 'car-finance', '7-day-return', 'testimonials', 'get-models', 'per-page', 'sort-by', 'make/*', 'website/subscribtion', 'contact/submit', 'script/vehicles/import', 'ajax_vehicle_inquiry', 'auth/a/*', 'sitemap.xml','sohail']],
         ],
         'after' => [
             // 'honeypot',
@@ -105,5 +104,7 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'auth' => ['before' => ['admin/*']]
+    ];
 }
