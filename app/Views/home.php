@@ -807,9 +807,10 @@
 <script type="text/javascript">
 $(document).ready(function() {
         var testimonialCarousel = $(".testimonial-carousel");
-        if (testimonialCarousel.find('.item').length > 1) {
-            testimonialCarousel.owlCarousel({
-            loop:true,
+        var itemCount = testimonialCarousel.children().length;
+
+        testimonialCarousel.owlCarousel({
+            loop: itemCount > 1,
             margin:30,
             nav:false,
             dots: false,
@@ -818,13 +819,18 @@ $(document).ready(function() {
                     items:1
                 },
                 768:{
-                    items:2
+                    items: Math.min(itemCount, 2) // Ensure we don't show more items than available
                 },
                 992:{
-                    items:3
+                    items: Math.min(itemCount, 3) // Ensure we don't show more items than available
                 }
             }
         });
+
+        // Hide navigation if only one item
+        if (itemCount <= 1) {
+            $('.custom-nav').hide();
+        }
 
         // Custom navigation
         $('.custom-nav .owl-next').click(function() {
@@ -833,7 +839,6 @@ $(document).ready(function() {
         $('.custom-nav .owl-prev').click(function() {
             testimonialCarousel.trigger('prev.owl.carousel');
         });
-        }
     });
 
     $(window).on("load", function() {
