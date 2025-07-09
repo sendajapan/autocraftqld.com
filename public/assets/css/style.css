@@ -3154,16 +3154,7 @@ text-align: center;
     margin-bottom: 1rem;
 }
 
-.testimonial-single-item {
-    display: flex;
-    justify-content: center;
-}
-
-.testimonial-single-item .testimonial-item {
-    max-width: 75%; /* Or any other width that suits your design */
-}
-
-.testimonial-item .star-rating i {
+.testimonial-item .star-rating {
     color: var(--accent-color);
 }
 
