@@ -15,7 +15,7 @@
     <![endif]-->
 
     
-<script src="<?=base_url()?>adminPanel/js/ajax.js"></script> 
+<script src="<?=base_url()?>public/assets/admin/js/ajax.js"></script> 
     
 </head>
 
