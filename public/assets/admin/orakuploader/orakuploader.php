@@ -1,17 +1,19 @@
 <?php
 
-error_reporting(1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if(!isset($_REQUEST['path'])) exit;
 $path = urldecode($_REQUEST['path']);
 $dirback_calc = str_replace('/', '../', preg_replace("#[^\/]#", '', trim($path, '/')));
 $dirback = $dirback_calc != '' ? '..'.$dirback_calc : "../";
 		
-// $main_path = 'F:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/';
-// $thumbnail_path = 'F:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/thumbs/';
+// Define the base path dynamically relative to the current script's location.
+$base_upload_path = dirname(__DIR__) . '/uploads/stock';
 
-$main_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock';
-$thumbnail_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/thumbs';
+// Set the main and thumbnail paths.
+$main_path = $base_upload_path;
+$thumbnail_path = $base_upload_path . '/thumbs';
 
 if(isset($_GET['delete']))
 {
