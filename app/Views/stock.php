@@ -19,197 +19,231 @@
             </div>
         </div>
     </div>
-
-
 </section>
-
-<section id="search" >
-
-
-    <div class="container search-block">
-
-        <h2 class="text-center mb-4">SEARCH <span class="text-primary"> VEHICLE </span></h2>
-
-
-        <form action="<?=base_url('stock')?>" method="post" class="row form-group flex-wrap px-3">
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-
-                    <select name="make" id="vehicle-make" class="form-select form-control">
-                        <option selected value="">Select Make</option>
-                        <?php if($makes){
-                                        foreach($makes as $item){ ?>
-                        <option
-                            <?php if(isset($user_search['make'])){if(strtoupper($user_search['make'])==strtoupper($item)){echo"selected";}}?>
-                            value="<?=$item?>"><?=$item?></option>
-                        <?php } } ?>
-
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-                    <select name="model" id="v_model" class="form-select form-control">
-                        <option value="">Select Model</option>
-                        <?php if($models){ 
-                                            foreach($models as $item){ ?>
-                        <option
-                            <?php if(isset($user_search['model'])){if(strtoupper($user_search['model'])==strtoupper(trim($item))){echo "selected";}} ?>
-                            value="<?=trim($item)?>"><?=strtoupper($item)?></option>
-                        <?php } } ?>
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-                    <select id="veh_condition" name="veh_condition" class="form-select form-control" id="vehicle">
-                        <option value="">Select Condition</option>
-                        <?php foreach($veh_condition as $item){
-                                    if($item!=""){ ?>
-                        <option
-                            <?php if(isset($user_search['veh_condition'])){if($user_search['veh_condition']==$item){echo"selected";}}?>
-                            value="<?=$item?>"><?=$item?></option>
-                        <?php } } ?>
-                    </select>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-                    <select id="body_type" name="body_type" class="form-select form-control">
-                        <option value="">Select Body Type</option>
-                        <?php if($body_types){
-                                        foreach($body_types as $item){ ?>
-                        <option
-                            <?php if(isset($user_search['body_type'])){if($user_search['body_type']==$item){echo "selected";}} ?>
-                            value="<?=$item?>"><?=$item?></option>
-                        <?php } } ?>
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-                    <select id="transmission" name="transmission" class="form-select form-control">
-                        <option value="">Select Transmission</option>
-                        <?php if($transmissions){
-                                        foreach($transmissions as $item){ ?>
-                        <option
-                            <?php if(isset($user_search['transmission'])){if($user_search['transmission']==$item){echo"selected";}}?>
-                            value="<?=$item?>"><?=$item?></option>
-                        <?php } } ?>
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-                    <select id="exterior_color" name="exterior_color" class="form-select form-control">
-                        <option value="">Select color</option>
-                        <?php if($colors){
-                                        foreach($colors as $item){ ?>
-                        <option
-                            <?php if(isset($user_search['exterior_color'])){if($user_search['exterior_color']==$item){echo"selected";}}?>
-                            value="<?=$item?>"><?=$item?></option>
-                        <?php } } ?>
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group ">
-                    <select id="fuel" name="fuel" class="form-select form-control">
-                        <option value="">Select Fuel</option>
-                        <?php if($fuels){
-                                        foreach($fuels as $item){ ?>
-                        <option
-                            <?php if(isset($user_search['fuel'])){if($user_search['fuel']==$item){echo"selected";}}?>
-                            value="<?=$item?>"><?=$item?></option>
-                        <?php } } ?>
-                    </select>
-
-                </div>
-            </div>
-
-
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group">
-
-                    <select id="year_from" name="year_from" class="form-select form-control">
-                        <?php for($y=2000; $y<=date("Y"); $y++){ ?>
-                        <option <?= ($request->getPost('year_from')==$y) ? "selected": "" ?> value="<?=$y?>">Year From <?=$y?>
-                        </option>
-                        <?php } ?>
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-lg-0 mb-2">
-                <div class="input-group">
-
-                    <select id="year_to" name="year_to" class="form-select form-control">
-                        <?php for($y=date("Y"); $y>=2000; $y--){ ?>
-                        <option <?= ($request->getPost('year_to')==$y) ? "selected": "" ?> value="<?=$y?>">Year To <?=$y?>
-                        </option>
-                        <?php } ?>
-                    </select>
-
-                </div>
-            </div>
-
-            <!-- <div class="ps-3 col-12 col-md-6 col-lg-4 mt-4 mt-lg-0 mb-2 home-range-slider">
-                <div class="hero__tab__form">
-                    <div class="car-price">
-                        <p>CC</p>
-                        <div class="price-range-wrap">
-                            <div class="cc-range"></div>
-                            <div class="range-slider">
-                                <div class="price-input">
-                                    <label for="cc"></label>
-                                    <input type="text" name="cc" id="cc" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="ps-3 col-12 col-md-6 col-lg-4 mt-4 mt-lg-0 mb-2 home-range-slider">
-                <div class="hero__tab__form">
-                    <div class="car-price">
-                        <p>Mileage</p>
-                        <div class="price-range-wrap">
-                            <div class="km-range"></div>
-                            <div class="range-slider">
-                                <div class="price-input">
-                                    <label for="km"></label>
-                                    <input type="text" name="km" id="km" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="col-12 col-md-12 col-lg-12 mt-lg-0 mb-2">
-                <div class="d-grid" style="margin-top:33px">
-                    <input type="submit" name="submit" value="Search Car" class="btn btn-secondary">
-                </div>
-            </div>
-
-        </form>
-
-
-    </div>
-
-</section>
-
 
 <section id="cars" class="py-5">
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-12">
+        <div class="col-lg-3 col-md-12 sidebar-col mb-4">
+                <div class="sidebar-search px-4 rounded shadow-sm bg-light">
+                    <h4 class="sidebar-title mb-4 border-bottom pb-2">Search Vehicle</h4>
+                    <form action="<?= base_url('stock') ?>" method="post" id="form">
+                        <div class="widget_inner">
+                            <div class="search_widget_inner">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <select name="make" id="vehicle-make" class="form-select form-control">
+                                            <option selected value="">Select Make</option>
+                                            <?php if ($makes) {
+                                                foreach ($makes as $item) { ?>
+                                                    <option <?php if (isset($user_search['make'])) {
+                                                                if (strtoupper($user_search['make']) == strtoupper($item)) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= $item ?>"><?= $item ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select name="model" id="v_model" class="form-select form-control">
+                                            <option value="">Select Model</option>
+                                            <?php if ($models) {
+                                                foreach ($models as $item) { ?>
+                                                    <option <?php if (isset($user_search['model'])) {
+                                                                if (strtoupper($user_search['model']) == strtoupper(trim($item))) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= trim($item) ?>"><?= strtoupper($item) ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="veh_condition" name="veh_condition" class="form-select form-control">
+                                            <option value="">Select Condition</option>
+                                            <?php foreach ($veh_condition as $item) {
+                                                if ($item != "") { ?>
+                                                    <option <?php if (isset($user_search['veh_condition'])) {
+                                                                if ($user_search['veh_condition'] == $item) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= $item ?>"><?= $item ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="body_type" name="body_type" class="form-select form-control">
+                                            <option value="">Select Body Type</option>
+                                            <?php if ($body_types) {
+                                                foreach ($body_types as $item) { ?>
+                                                    <option <?php if (isset($user_search['body_type'])) {
+                                                                if ($user_search['body_type'] == $item) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= $item ?>"><?= $item ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="transmission" name="transmission" class="form-select form-control">
+                                            <option value="">Select Transmission</option>
+                                            <?php if ($transmissions) {
+                                                foreach ($transmissions as $item) { ?>
+                                                    <option <?php if (isset($user_search['transmission'])) {
+                                                                if ($user_search['transmission'] == $item) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= $item ?>"><?= $item ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="exterior_color" name="exterior_color" class="form-select form-control">
+                                            <option value="">Select color</option>
+                                            <?php if ($colors) {
+                                                foreach ($colors as $item) { ?>
+                                                    <option <?php if (isset($user_search['exterior_color'])) {
+                                                                if ($user_search['exterior_color'] == $item) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= $item ?>"><?= $item ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="fuel" name="fuel" class="form-select form-control">
+                                            <option value="">Select Fuel</option>
+                                            <?php if ($fuels) {
+                                                foreach ($fuels as $item) { ?>
+                                                    <option <?php if (isset($user_search['fuel'])) {
+                                                                if ($user_search['fuel'] == $item) {
+                                                                    echo "selected";
+                                                                }
+                                                            } ?> value="<?= $item ?>"><?= $item ?></option>
+                                            <?php } 
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="year_from" name="year_from" class="form-select form-control">
+                                            <option value="">Year From</option>
+                                            <?php for ($y = 2000; $y <= date("Y"); $y++) { ?>
+                                                <option <?= ($request->getPost('year_from') == $y) ? "selected" : "" ?> value="<?= $y ?>"><?= $y ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select id="year_to" name="year_to" class="form-select form-control">
+                                            <option value="">Year To</option>
+                                            <?php for ($y = date("Y"); $y >= 2000; $y--) { ?>
+                                                <option <?= ($request->getPost('year_to') == $y) ? "selected" : "" ?> value="<?= $y ?>"><?= $y ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="submit" name="submit" value="Search Car" class="btn btn-secondary w-100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <div class="sidebar_widget">
+                    <div class="widget_inner">
+                        <div class="widget_title">
+                            <h5>Search by Body Type</h5>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <a href="<?= base_url('stock?body_type=Sedan') ?>" class="cat-box">
+                                    <div class="icon-box"><img src="<?= base_url('public/assets/images/sedan.png') ?>" alt="Sedan"></div>
+                                    <p class="cat-name">Sedan</p>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="<?= base_url('stock?body_type=Hatchback') ?>" class="cat-box">
+                                    <div class="icon-box"><img src="<?= base_url('public/assets/images/hatchback.png') ?>" alt="Hatchback"></div>
+                                    <p class="cat-name">Hatchback</p>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="<?= base_url('stock?body_type=Wagon') ?>" class="cat-box">
+                                    <div class="icon-box"><img src="<?= base_url('public/assets/images/wagon.png') ?>" alt="Wagon"></div>
+                                    <p class="cat-name">Wagon</p>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="<?= base_url('stock?body_type=Coupe') ?>" class="cat-box">
+                                    <div class="icon-box"><img src="<?= base_url('public/assets/images/coupe.png') ?>" alt="Coupe"></div>
+                                    <p class="cat-name">Coupe</p>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="<?= base_url('stock?body_type=SUV') ?>" class="cat-box">
+                                    <div class="icon-box"><img src="<?= base_url('public/assets/images/suv.png') ?>" alt="SUV"></div>
+                                    <p class="cat-name">SUV</p>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="<?= base_url('stock?body_type=Convertible') ?>" class="cat-box">
+                                    <div class="icon-box"><img src="<?= base_url('public/assets/images/convertible.png') ?>" alt="Convertible"></div>
+                                    <p class="cat-name">Convertible</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="sidebar-body-type mt-4 p-4 rounded shadow-sm bg-light">
+                    <h4 class="sidebar-title mb-4 border-bottom pb-2">Search by Body Type</h4>
+                    <div class="row g-3">
+                        <div class="col-6 text-center">
+                                                        <a href="<?=base_url('stock?body_type=Jeep')?>" class="body-type-link">
+                                <img src="<?=base_url('public/assets/images/jeep.png')?>" alt="Jeep" class="img-fluid rounded">
+                                <h6 class="mt-2">Jeep</h6>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center">
+                                                        <a href="<?=base_url('stock?body_type=Wagon')?>" class="body-type-link">
+                                <img src="<?=base_url('public/assets/images/vagon.png')?>" alt="Vagon" class="img-fluid rounded">
+                                <h6 class="mt-2">Vagon</h6>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center">
+                                                        <a href="<?=base_url('stock?body_type=Van')?>" class="body-type-link">
+                                <img src="<?=base_url('public/assets/images/van.png')?>" alt="Van" class="img-fluid rounded">
+                                <h6 class="mt-2">Van</h6>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center">
+                                                        <a href="<?=base_url('stock?body_type=Truck')?>" class="body-type-link">
+                                <img src="<?=base_url('public/assets/images/truck.png')?>" alt="Truck" class="img-fluid rounded">
+                                <h6 class="mt-2">Truck</h6>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center">
+                                                        <a href="<?=base_url('stock?body_type=Convertible')?>" class="body-type-link">
+                                <img src="<?=base_url('public/assets/images/convertible.png')?>" alt="Convertible" class="img-fluid rounded">
+                                <h6 class="mt-2">Convertible</h6>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center">
+                                                        <a href="<?=base_url('stock?body_type=Sedan')?>" class="body-type-link">
+                                <img src="<?=base_url('public/assets/images/sedan.png')?>" alt="Sedan" class="img-fluid rounded">
+                                <h6 class="mt-2">Sedan</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
 
                 <div class="stock-filter d-flex justify-content-between mb-4">
 
@@ -252,7 +286,7 @@
                        
             ?>
 
-                    <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card rounded-3">
                             <div class="card-body p-0 ">
                                 <a class="figure" target="_blank" href="<?= base_url('car/'.$item['slug']) ?>">
@@ -266,11 +300,11 @@
                                 </a>
                                 <div class="row px-4">
                                     <div class="col-9 p-0">
-                                        <a>
-                                            <h4 class="card-title" target="_blank"
-                                                href="<?= base_url('car/'.$item['slug']) ?>">
-                                                <?= $item['make'] ?> <?= $item['model'] ?></h4>
-                                        </a>
+                                            <a>
+                                                <h4 class="card-title" target="_blank"
+                                                    href="<?= base_url('car/'.$item['slug']) ?>">
+                                                    <?= $item['make'] ?> <?= $item['model'] ?> - <?=$item['year']?></h4>
+                                            </a>
                                     </div>
                                     <div class="col-3 p-0">
                                         <a href="" class="text-black">ASK</a>
@@ -279,31 +313,26 @@
 
                                 </div>
                                 <div class="row card-text">
-                                    <div
-                                        class="col-6 px-1 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-12 col-sm-5 offset-sm-1 col-xs-5 offset-xs-1 d-flex flex-column align-items-baseline detail_box">
-                                        <div class="text-nowrap"><i class="fa-solid fa-gauge"></i>
-                                            <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
+                                        <div
+                                            class="col-6 px-1 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-12 col-sm-5 offset-sm-1 col-xs-5 offset-xs-1 d-flex flex-column align-items-baseline detail_box">
+                                            
+                                            <div class="text-nowrap"><i class="fa-solid fa-palette"></i>
+                                                <span><?=$item['exterior_color']?></span>
+                                            </div>
+                                            <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
+                                                <span><?=$item['fuel']?> </span>
+                                            </div>
                                         </div>
-                                        <div class="text-nowrap"><i class="fa-solid fa-palette"></i>
-                                            <span><?=$item['exterior_color']?></span>
-                                        </div>
-                                        <div class="text-nowrap"><i class="fa-solid fa-pump"></i>
-                                            <span><?=$item['fuel']?> </span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="col-6 px-1 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-12 col-sm-5 offset-sm-1 col-xs-5 offset-xs-1 d-flex flex-column align-items-baseline detail_box">
-                                        <div class="text-nowrap"><i class="fa-solid fa-calendar"></i>
-                                            <span><?=$item['year']?></span>
-                                        </div>
-                                        <div class="text-nowrap"><i class="fa-solid fa-dharmachakra"></i>
-                                            <span><?=$item['drive']?></span>
-                                        </div>
-                                        <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
-                                            <span><?=$item['transmission']?></span>
+                                        <div
+                                            class="col-6 px-1 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-12 col-sm-5 offset-sm-1 col-xs-5 offset-xs-1 d-flex flex-column align-items-baseline detail_box">
+                                            <div class="text-nowrap"><i class="fa-solid fa-gauge"></i>
+                                                <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
+                                            </div>
+                                            <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
+                                                <span><?=$item['veh_condition']?></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>

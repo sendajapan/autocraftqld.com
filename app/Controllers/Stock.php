@@ -65,6 +65,11 @@ class Stock extends BaseController
         $uri = service('uri');
 
 
+        if($this->request->getGet('body_type')){
+            $search['body_type'] = $this->request->getGet('body_type');
+        }
+
+
                 // Check URI for make/model conditions
             if($uri->getSegment(1) == 'make' && $uri->getSegment(3) == 'model') {
                 $search['make'] = urldecode($uri->getSegment(2));

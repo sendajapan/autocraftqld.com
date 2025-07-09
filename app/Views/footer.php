@@ -51,18 +51,18 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <a href="<?=base_url()?>">
-                    <!-- <img style="width:280px;" src="<?=base_url("public/assets/images/Group 3412.png")?>" alt="image"> -->
-                    <h1 class="logo-text">AutoCraft <span class="text-primary">QLD</span></h1>
+                    <img style="width:280px;" src="<?=base_url("public/assets/images/logo.jpg")?>" alt="image">
+                    <!-- <h1 class="logo-text">AutoCraft <span class="text-primary">QLD</span></h1> -->
 
                 </a>
                 <div class="footer-contact-info ps-1 mt-2">
                     <p>Trading in your current vehicle has never been easier. Use our online valuation tool to get an
                         instant estimate.</p>
-                    <div class="social-icons mt-3">
+                    <!-- <div class="social-icons mt-3">
                         <a href="#" class="social-icon me-2"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon me-2"><i class="fab fa-x"></i></a>
                         <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    </div> -->
                      </div>
 
             </div>

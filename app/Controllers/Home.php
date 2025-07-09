@@ -76,46 +76,46 @@ class Home extends BaseController
             $data['four_wheel_drive'] = '';
         }
 
-        // body type SUV
-        $suvs = $this->vehiclemodel->where('display_website', 1)
-            ->where('body_type', 'SUV')
+        // body type Sedan
+        $sedans = $this->vehiclemodel->where('display_website', 1)
+            ->where('body_type', 'SEDAN')
             ->orderBy('featured_image', 'DESC')
             ->orderBy('veh_id', 'DESC')
             ->findAll(8, 0);
 
-        if ($suvs) {
-            $suvs_veh_data = array();
-            foreach ($suvs as $item) {
+        if ($sedans) {
+            $sedans_veh_data = array();
+            foreach ($sedans as $item) {
                 $updated_item = $item;
                 $updated_item['slug'] = strtolower(str_replace(" ", "-", $item['make'] . "-" . $item['model'] . "-" . $item['year'] . "-" . $item['veh_id']));
                 $updated_item['featured_image'] = $this->get_pic_link($item['featured_image']);
                 $updated_item['fob_price'] = 'ASK';
-                $suvs_veh_data[] = $updated_item;
+                $sedans_veh_data[] = $updated_item;
             }
-            $data['suvs'] = $suvs_veh_data;
+            $data['sedans'] = $sedans_veh_data;
         } else {
-            $data['suvs'] = '';
+            $data['sedans'] = '';
         }
 
         // fuel type Diesel
-        $diesel_vehicles = $this->vehiclemodel->where('display_website', 1)
-            ->where('fuel', 'Diesel')
+        $gasoline_vehicles = $this->vehiclemodel->where('display_website', 1)
+            ->where('fuel', 'GASOLINE')
             ->orderBy('featured_image', 'DESC')
             ->orderBy('veh_id', 'DESC')
             ->findAll(8, 0);
 
-        if ($diesel_vehicles) {
-            $diesel_vehicles_data = array();
-            foreach ($diesel_vehicles as $item) {
+        if ($gasoline_vehicles) {
+            $gasoline_vehicles_data = array();
+            foreach ($gasoline_vehicles as $item) {
                 $updated_item = $item;
                 $updated_item['slug'] = strtolower(str_replace(" ", "-", $item['make'] . "-" . $item['model'] . "-" . $item['year'] . "-" . $item['veh_id']));
                 $updated_item['featured_image'] = $this->get_pic_link($item['featured_image']);
                 $updated_item['fob_price'] = 'ASK';
-                $diesel_vehicles_data[] = $updated_item;
+                $gasoline_vehicles_data[] = $updated_item;
             }
-            $data['diesel_vehicles'] = $diesel_vehicles_data;
+            $data['gasoline_vehicles'] = $gasoline_vehicles_data;
         } else {
-            $data['diesel_vehicles'] = '';
+            $data['gasoline_vehicles'] = '';
         }
 
         // testimonials

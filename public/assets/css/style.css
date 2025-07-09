@@ -83,11 +83,11 @@ html, body {
 }
 
 .top_banner{
-  background-image: url('../images/tolex.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url('../images/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; 
-  padding: 151px 0 183px;
+  padding: 100px 0;
 }
 
 input[type="text"]:focus {
@@ -128,7 +128,8 @@ textarea:focus {
 .stock-filter{
   background: var(--accent-color);
   box-shadow: 0px 12px 90px rgba(12, 12, 12, 0.06);
-  padding: 6px 30px;
+  padding: 5px 30px;
+  border-radius: 5px;
 }
 
 .stock-filter .form-group {
@@ -530,10 +531,6 @@ color: grey;
   font-size: 28px;
   font-weight: 500;
   color: #000000 !important;
-}
-
-#form{
-  padding-bottom: 110px;
 }
 
 .feature-box {
@@ -1608,6 +1605,14 @@ line-height: 24.55px;
 text-align: left;
 }
 
+.card-title{
+  font-family: var(--heading-font);
+  font-size: 16px;
+font-weight: 700;
+line-height: 24.55px;
+text-align: left;
+}
+
 /*--------------------------------------------------------------
 Index page style start
 --------------------------------------------------------------*//*---- navigation section style start ----*/
@@ -2025,7 +2030,7 @@ section#hero
 
 .stock-section{
   background-color: white;
-  padding: 50px 0;
+  /* padding: 50px 0; */
 }
 
 iconify-icon.search-icons {
@@ -2227,10 +2232,6 @@ a.nav-link:hover {
   }
   .hero-red-bottom{
     display: none !important;
-  }
-
-  #form{
-    padding-bottom: 50px;
   }
 
   .borderr, .noborderr{

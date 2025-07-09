@@ -180,37 +180,37 @@
                     <h4 class="sidebar-title mb-4 border-bottom pb-2">Search by Body Type</h4>
                     <div class="row g-3">
                         <div class="col-6 text-center">
-                            <a href="#" class="body-type-link">
+                                                        <a href="<?=base_url('stock?body_type=Jeep')?>" class="body-type-link">
                                 <img src="<?=base_url('public/assets/images/jeep.png')?>" alt="Jeep" class="img-fluid rounded">
                                 <h6 class="mt-2">Jeep</h6>
                             </a>
                         </div>
                         <div class="col-6 text-center">
-                            <a href="#" class="body-type-link">
+                                                        <a href="<?=base_url('stock?body_type=Wagon')?>" class="body-type-link">
                                 <img src="<?=base_url('public/assets/images/vagon.png')?>" alt="Vagon" class="img-fluid rounded">
                                 <h6 class="mt-2">Vagon</h6>
                             </a>
                         </div>
                         <div class="col-6 text-center">
-                            <a href="#" class="body-type-link">
+                                                        <a href="<?=base_url('stock?body_type=Van')?>" class="body-type-link">
                                 <img src="<?=base_url('public/assets/images/van.png')?>" alt="Van" class="img-fluid rounded">
                                 <h6 class="mt-2">Van</h6>
                             </a>
                         </div>
                         <div class="col-6 text-center">
-                            <a href="#" class="body-type-link">
+                                                        <a href="<?=base_url('stock?body_type=Truck')?>" class="body-type-link">
                                 <img src="<?=base_url('public/assets/images/truck.png')?>" alt="Truck" class="img-fluid rounded">
                                 <h6 class="mt-2">Truck</h6>
                             </a>
                         </div>
                         <div class="col-6 text-center">
-                            <a href="#" class="body-type-link">
+                                                        <a href="<?=base_url('stock?body_type=Convertible')?>" class="body-type-link">
                                 <img src="<?=base_url('public/assets/images/convertible.png')?>" alt="Convertible" class="img-fluid rounded">
                                 <h6 class="mt-2">Convertible</h6>
                             </a>
                         </div>
                         <div class="col-6 text-center">
-                            <a href="#" class="body-type-link">
+                                                        <a href="<?=base_url('stock?body_type=Sedan')?>" class="body-type-link">
                                 <img src="<?=base_url('public/assets/images/sedan.png')?>" alt="Sedan" class="img-fluid rounded">
                                 <h6 class="mt-2">Sedan</h6>
                             </a>
@@ -277,7 +277,7 @@
                                                 <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
-                                                <span><?=$item['transmission']?></span>
+                                                <span><?=$item['veh_condition']?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -345,7 +345,7 @@
                                                 <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
-                                                <span><?=$item['transmission']?></span>
+                                                <span><?=$item['veh_condition']?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -370,22 +370,22 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" id="vehicleTabs" role="tablist">
                         <li class="nav-item" role="presentation">
-                                <button class="nav-link tab-btn active" id="diesel-tab" data-bs-toggle="tab" data-bs-target="#diesel" type="button" role="tab" aria-controls="diesel" aria-selected="false">Diesel</button>
+                                <button class="nav-link tab-btn active" id="gasoline-tab" data-bs-toggle="tab" data-bs-target="#gasoline" type="button" role="tab" aria-controls="gasoline" aria-selected="false">Gasoline</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link tab-btn" id="suv-tab" data-bs-toggle="tab" data-bs-target="#suv" type="button" role="tab" aria-controls="suv" aria-selected="true">SUV</button>
+                                <button class="nav-link tab-btn" id="sedan-tab" data-bs-toggle="tab" data-bs-target="#sedan" type="button" role="tab" aria-controls="sedan" aria-selected="true">Sedan</button>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            <!-- <li class="nav-item" role="presentation">
                                 <button class="nav-link tab-btn" id="4wd-tab" data-bs-toggle="tab" data-bs-target="#4wd" type="button" role="tab" aria-controls="4wd" aria-selected="false">4WD</button>
-                            </li>
+                            </li> -->
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content mt-4">
-                            <!-- SUV Tab Pane -->
-                            <div class="tab-pane " id="suv" role="tabpanel" aria-labelledby="suv-tab">
+                            <!-- Sedan Tab Pane -->
+                            <div class="tab-pane " id="sedan" role="tabpanel" aria-labelledby="sedan-tab">
                                 <div class="row">
-                                    <?php if($suvs){foreach($suvs as $key => $item){ if($key<3){?>
+                                    <?php if($sedans){foreach($sedans as $key => $item){ if($key<3){?>
                                     <div class="col-lg-4 col-md-6 mb-4">
                                         <div class="card rounded-3">
                                         <div class="card-body p-0 ">
@@ -430,7 +430,7 @@
                                                 <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
-                                                <span><?=$item['transmission']?></span>
+                                                <span><?=$item['veh_condition']?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -438,7 +438,7 @@
                                 </div>
                                         </div>
                                     </div>
-                                    <?php } } } else { echo "<p>No SUVs found.</p>"; } ?>
+                                    <?php } } } else { echo "<p>No Sedans found.</p>"; } ?>
                                 </div>
                             </div>
 
@@ -490,7 +490,7 @@
                                                 <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
-                                                <span><?=$item['transmission']?></span>
+                                                <span><?=$item['veh_condition']?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -502,10 +502,10 @@
                                 </div>
                             </div>
 
-                            <!-- Diesel Tab Pane -->
-                            <div class="tab-pane active" id="diesel" role="tabpanel" aria-labelledby="diesel-tab">
+                            <!-- Gasoline Tab Pane -->
+                            <div class="tab-pane active" id="gasoline" role="tabpanel" aria-labelledby="gasoline-tab">
                                 <div class="row">
-                                    <?php if($diesel_vehicles){foreach($diesel_vehicles as $key => $item){ if($key<3){?>
+                                    <?php if($gasoline_vehicles){foreach($gasoline_vehicles as $key => $item){ if($key<3){?>
                                     <div class="col-lg-4 col-md-6 mb-4">
                                         <div class="card rounded-3">
                                         <div class="card-body p-0 ">
@@ -550,7 +550,7 @@
                                                 <span><?= ($item['mileage']) ? number_format($item['mileage']).' km' : '-'; ?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gears"></i>
-                                                <span><?=$item['transmission']?></span>
+                                                <span><?=$item['veh_condition']?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -558,7 +558,7 @@
                                 </div>
                                         </div>
                                     </div>
-                                    <?php } } } else { echo "<p>No diesel vehicles found.</p>"; } ?>
+                                    <?php } } } else { echo "<p>No gasoline vehicles found.</p>"; } ?>
                                 </div>
                             </div>
                         </div>
