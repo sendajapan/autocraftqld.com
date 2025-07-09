@@ -11,12 +11,12 @@ $dirback = $dirback_calc != '' ? '..'.$dirback_calc : "../";
 // $thumbnail_path = 'C:/xampp/htdocs/sendajapan/autocraftkorea.com/public/assets/admin/uploads/stock/thumbs/';
 
 // Commented out live server paths
-// $main_path = '/home/globa225/autocraftkorea.com/public/assets/admin/uploads/stock';
-// $thumbnail_path = '/home/globa225/autocraftkorea.com/public/assets/admin/uploads/stock/thumbs';
+$main_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock';
+$thumbnail_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/thumbs';
 
 // Correct paths for the local XAMPP environment
-$main_path = 'f:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/';
-$thumbnail_path = 'f:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/thumbs/';
+// $main_path = 'f:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/';
+// $thumbnail_path = 'f:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/thumbs/';
 
 if(isset($_GET['delete']))
 {
