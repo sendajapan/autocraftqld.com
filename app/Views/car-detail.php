@@ -315,7 +315,7 @@
                         <div class="d-grid mb-3">         
                         
                             <button class="g-recaptcha btn btn-secondary btn-lg text-uppercase btn-rounded-none" 
-                                      data-sitekey="6LenXaYqAAAAAOpYOl81pk5ADV9DZq2BpNNo-TNr" 
+                                      data-sitekey="6LcTCH0rAAAAAMJor-Snlu4pfJNUK4ubUs9qXoI0" 
                                       data-callback='onSubmit' 
                                       data-action='submit' type="button" id="inquiry_submit_btn">SEND INQUIRY</button>
 

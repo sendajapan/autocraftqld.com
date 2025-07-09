@@ -528,7 +528,7 @@ class Stock extends BaseController
         { 
             $token = $this->request->getPost('recaptcha_token');
 
-            $secret_key = '6LenXaYqAAAAAKbuGJoO7UFoIKieHojgJZYPaCro';
+            $secret_key = '6LcTCH0rAAAAAHMerEcJa7QrssJ3GPsuY2L1mbV6';
 
             $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$token);
 
