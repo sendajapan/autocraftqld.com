@@ -6,20 +6,6 @@ use CodeIgniter\Config\BaseConfig;
 
 class App extends BaseConfig
 {
-    public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
-    public $sessionCookieName = 'ci_session';
-    public $sessionExpiration = 7200;
-    public $sessionSavePath = WRITEPATH . 'session';
-    public $sessionMatchIP = false;
-    public $sessionTimeToUpdate = 300;
-    public $sessionRegenerateDestroy = false;
-
-    public $cookiePrefix = '';
-    public $cookieDomain = '.autocraftqld.com';
-    public $cookiePath = '/';
-    public $cookieSecure = true;
-    public $cookieHTTPOnly = true;
-    public $cookieSameSite = 'Lax';
     /**
      * --------------------------------------------------------------------------
      * Base Site URL
