@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-// service('auth')->routes($routes); // Removed for custom login system
+service('auth')->routes($routes);
 
 
 $routes->get('/', 'Home::index');
@@ -34,9 +34,10 @@ $routes->post('sort-by', 'Stock::set_sort_by');
 // Site Map
 $routes->get('/sitemap.xml', 'SitemapController::index');
 
-$routes->match(['get', 'post'], 'login', 'LoginController::login');
-$routes->get('logout', 'LoginController::logout');
-$routes->get('hash-password/(:any)', 'LoginController::hashPassword/$1'); // Temporary tool
+
+/*$routes->match(['get', 'post'], 'login', 'LoginController::login');
+$routes->get('logout', 'LoginController::logout');*/
+//$routes->get('login', 'LoginController::login');
 
 /*----------ADMIN----------*/
 
