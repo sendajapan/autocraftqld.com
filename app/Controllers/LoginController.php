@@ -9,6 +9,8 @@ class LoginController extends BaseController
     
     public function login()
     {   
+				echo 'user';
+				exit;
         /*$var = 'senda12';
         $hash = password_hash($var, PASSWORD_BCRYPT);
         echo $hash;
@@ -27,8 +29,6 @@ class LoginController extends BaseController
                 ],
             ];
 
-				echo 'user';
-				exit;
             if (!$this->validate($rules, $errors)) {
                 return view('login', [
                     "validation" => $this->validator,
