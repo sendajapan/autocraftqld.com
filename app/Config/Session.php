@@ -8,6 +8,9 @@ use CodeIgniter\Session\Handlers\FileHandler;
 
 class Session extends BaseConfig
 {
+    public string $cookieDomain = '.autocraftqld.com';
+    public bool $cookieSecure = true;
+    public string $cookieSameSite = 'Lax';
     /**
      * --------------------------------------------------------------------------
      * Session Driver
