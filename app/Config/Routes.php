@@ -9,9 +9,9 @@ service('auth')->routes($routes);
 
 
 $routes->get('/', 'Home::index');
-$routes->get('warranty', 'Warranty::index');
-$routes->get('car-finance', 'Carfinance::index');
-$routes->get('7-day-return', 'SevenDayReturn::index');
+// $routes->get('warranty', 'Warranty::index');
+// $routes->get('car-finance', 'Carfinance::index');
+// $routes->get('7-day-return', 'SevenDayReturn::index');
 
 $routes->match(['get', 'post'], 'stock', 'Stock::index');
 $routes->get('make/(:any)','Stock::index');
