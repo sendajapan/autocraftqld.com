@@ -9,8 +9,6 @@ class LoginController extends BaseController
     
     public function login()
     {   
-				echo 'user';
-				exit;
         /*$var = 'senda12';
         $hash = password_hash($var, PASSWORD_BCRYPT);
         echo $hash;
@@ -42,8 +40,6 @@ class LoginController extends BaseController
                     'email' => $email
                 ];
                 $user = $model->where('email',$email)->first();
-				print_r($user);
-				exit;
                 if (is_array($user)) {
                     $db_pass = $user['password'];
                     $ver = password_verify($password, $db_pass);
