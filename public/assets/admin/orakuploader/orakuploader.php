@@ -7,11 +7,14 @@ $path = urldecode($_REQUEST['path']);
 $dirback_calc = str_replace('/', '../', preg_replace("#[^\/]#", '', trim($path, '/')));
 $dirback = $dirback_calc != '' ? '..'.$dirback_calc : "../";
 		
-// $main_path = 'C:/xampp/htdocs/sendajapan/autocraftusa.net/public/assets/admin/uploads/stock/';
-// $thumbnail_path = 'C:/xampp/htdocs/sendajapan/autocraftusa.net/public/assets/admin/uploads/stock/thumbs/';
+$main_path = 'F:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/';
+$thumbnail_path = 'F:/xampp/htdocs/sendajapan/autocraftqld.com/public/assets/admin/uploads/stock/thumbs/';
 
-$main_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock';
-$thumbnail_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/thumbs';
+// $main_path = '/home/globa225/autocraftkorea.com/public/assets/admin/uploads/stock';
+// $thumbnail_path = '/home/globa225/autocraftkorea.com/public/assets/admin/uploads/stock/thumbs';
+
+// $main_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock';
+// $thumbnail_path = '/home/globa225/autocraftqld.com/public/assets/admin/uploads/stock/thumbs';
 
 if(isset($_GET['delete']))
 {
