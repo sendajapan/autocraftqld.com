@@ -717,41 +717,69 @@
     <div class="container">
         <div class="row align-items-center mb-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h2 class="section-title">What Our <span class="text-primary">Customers</span> Say</h2>
-                            <div class="divider"></div>
-                            <div class="owl-nav custom-nav">
-                                <button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button>
+                <h2 class="section-title">What Our <span class="text-primary">Customers</span> Say</h2>
+                <div class="divider"></div>
+                <?php if (isset($testimonials) && count($testimonials) > 1) : ?>
+                <div class="owl-nav custom-nav">
+                    <button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="<?php echo (isset($testimonials) && count($testimonials) > 1) ? 'owl-carousel testimonial-carousel' : 'testimonial-single-item'; ?>">
+            <?php if (isset($testimonials) && !empty($testimonials)) : ?>
+                <?php if (count($testimonials) > 1) : ?>
+                    <?php foreach ($testimonials as $item) { ?>
+                        <div class="testimonial-item">
+                            <div class="testimonial-header">
+                            <img src="<?=base_url('public/assets/images/Sample_User_Icon.png')?>" alt="image" class="img-fluid">
+                                <div class="author-info">
+                                    <h6 class="author-name"><?= $item['testimonial_by'] ?></h6>
+                                    <p class="author-role">Customer</p>
+                                </div>
+                                <div class="quote-icon">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </div>
+                            </div>
+                            <p class="testimonial-body">
+                                <?= strlen($item['testimonial_desc']) > 100 ? substr($item['testimonial_desc'], 0, 100) . '...' : $item['testimonial_desc'] ?>
+                            </p>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
                         </div>
-        <div class="owl-carousel testimonial-carousel">
-        <?php foreach ($testimonials as $item) { ?>
-            <!-- Testimonial 1 -->
-            <div class="testimonial-item">
-                <div class="testimonial-header">
-                <img src="<?=base_url('public/assets/images/Sample_User_Icon.png')?>" alt="image" class="img-fluid">
-                    <div class="author-info">
-                        <h6 class="author-name"><?= $item['testimonial_by'] ?></h6>
-                        <p class="author-role">Customer</p>
+                    <?php } ?>
+                <?php else : ?>
+                    <?php $item = $testimonials[0]; ?>
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                        <img src="<?=base_url('public/assets/images/Sample_User_Icon.png')?>" alt="image" class="img-fluid">
+                            <div class="author-info">
+                                <h6 class="author-name"><?= $item['testimonial_by'] ?></h6>
+                                <p class="author-role">Customer</p>
+                            </div>
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-body">
+                            <?= $item['testimonial_desc'] ?>
+                        </p>
+                        <div class="star-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-quote-right"></i>
-                    </div>
-                </div>
-                <p class="testimonial-body">
-                    <?= strlen($item['testimonial_desc']) > 100 ? substr($item['testimonial_desc'], 0, 100) . '...' : $item['testimonial_desc'] ?>
-                </p>
-                <div class="star-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
+                <?php endif; ?>
+            <?php endif; ?>
             </div>
-          
-         <?php } ?>
-        </div>
     </div>
 </section>
 <!-------------------------------- Testimonials Section End ---------------------------------->
@@ -806,8 +834,9 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-        var testimonialCarousel = $(".testimonial-carousel");
-        testimonialCarousel.owlCarousel({
+        if ($('.testimonial-carousel').length > 0 && $('.testimonial-carousel .testimonial-item').length > 1) {
+            var testimonialCarousel = $(".testimonial-carousel");
+            testimonialCarousel.owlCarousel({
             loop:true,
             margin:30,
             nav:false,
