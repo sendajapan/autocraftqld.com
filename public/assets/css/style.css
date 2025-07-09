@@ -1026,6 +1026,21 @@ footer .btn {
   border-radius: 8px;
 }
 
+.marquee-content {
+  display: flex;
+  width: 200%;
+  animation: marquee 16s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  /* width: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+}
+
 @media (max-width: 991px) {
   .footer-main {
     padding: 0 0 20px 0;
@@ -1052,12 +1067,21 @@ footer .btn {
     font-size: 0.92rem;
   }
   .footer-main img {
-    width: 130px !important;
+    width: 190px !important;
     margin-bottom: 10px;
   }
   .form-input button {
     width: 100%;
   }
+
+  .marquee-content{
+    animation: marquee 3s linear infinite;
+  }
+
+  .page-title
+{
+  font-size: 27px;
+}
 }
 
 .footer-nav .nav-link{
@@ -1875,6 +1899,7 @@ section#hero {
   .detail h2
 {
       font-size: 45px;
+      line-height: 40px;
 
 }
 
@@ -1902,7 +1927,6 @@ section#hero
 
   .footer-contact-info{
     font-size: 0.75rem;
-    padding-top: 39px;
   }
 
   .footer-makes{
@@ -1979,7 +2003,7 @@ section#hero
 
 @media screen and (max-width: 462px) {
   .navbar-brand img{
-    width:230px !important;
+    width:170px !important;
   }
     .btn{
       font-size: 1.188rem;
@@ -3040,20 +3064,7 @@ text-align: center;
     overflow: hidden;
 }
 
-.marquee-content {
-    display: flex;
-    width: 200%;
-    animation: marquee 40s linear infinite;
-    will-change: transform;
-}
 
-.marquee-group {
-    /* width: 50%; */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-shrink: 0;
-}
 
 .body-type-item {
     font-size: 1.5rem;

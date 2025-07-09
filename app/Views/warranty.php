@@ -3,9 +3,9 @@
 
 
 <?= $this->section('content') ?>
-<section class="top_banner_section">
+<section class="top_banner">
     <div class="container">
-        <h1 class="text-center text-white">Our Warranty</h1>
+        <h2 class="text-center text-white">Our Warranty</h2>
         <p class="text-center text-white">Peace of Mind with Every Purchase</p>
     </div>
 </section>
@@ -15,8 +15,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <div class="warranty-content text-center">
-                    <h2>Comprehensive Warranty Coverage</h2>
-                    <p>At Autocraft QLD, we stand by the quality of our vehicles. That's why every car we sell comes with a comprehensive warranty, giving you confidence and peace of mind on the road. Our warranty is designed to protect you from unexpected repair costs and ensure your vehicle remains in top condition.</p>
+                    <h2 class="text-center">Comprehensive Warranty Coverage</h2>
+                    <p class="text-center">At Autocraft QLD, we stand by the quality of our vehicles. That's why every car we sell comes with a comprehensive warranty, giving you confidence and peace of mind on the road. Our warranty is designed to protect you from unexpected repair costs and ensure your vehicle remains in top condition.</p>
                 </div>
             </div>
         </div>
@@ -24,23 +24,23 @@
         <div class="row mt-5">
             <div class="col-lg-4 col-md-6">
                 <div class="feature-box1">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>What's Covered?</h3>
-                    <p>Our warranty covers major mechanical and electrical components, including the engine, transmission, and drivetrain. For a full list of covered parts, please refer to your warranty booklet.</p>
+                    <i class="fas fa-check-circle text-center"></i>
+                    <h3 class="text-center">What's Covered?</h3>
+                    <p class="text-center">Our warranty covers major mechanical and electrical components, including the engine, transmission, and drivetrain. For a full list of covered parts, please refer to your warranty booklet.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="feature-box1">
-                    <i class="fas fa-clock"></i>
-                    <h3>Warranty Period</h3>
-                    <p>Our standard warranty is valid for 3 months or 5,000 kilometers, whichever comes first. Extended warranty options are also available for purchase.</p>
+                    <i class="fas fa-clock text-center"></i>
+                    <h3 class="text-center">Warranty Period</h3>
+                    <p class="text-center">Our standard warranty is valid for 3 months or 5,000 kilometers, whichever comes first. Extended warranty options are also available for purchase.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="feature-box1">
-                    <i class="fas fa-road"></i>
-                    <h3>Roadside Assistance</h3>
-                    <p>For added peace of mind, our warranty includes 24/7 roadside assistance. Whether you have a flat tire or a dead battery, help is just a phone call away.</p>
+                    <i class="fas fa-road text-center"></i>
+                    <h3 class="text-center">Roadside Assistance</h3>
+                    <p class="text-center">For added peace of mind, our warranty includes 24/7 roadside assistance. Whether you have a flat tire or a dead battery, help is just a phone call away.</p>
                 </div>
             </div>
         </div>

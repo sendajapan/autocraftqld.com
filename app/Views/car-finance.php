@@ -1,9 +1,9 @@
 <?= $this->extend('template') ?>
 
 <?= $this->section('content') ?>
-<section class="top_banner_section">
+<section class="top_banner">
     <div class="container">
-        <h1 class="text-center text-white">Car Finance</h1>
+        <h2 class="text-center text-white">Car Finance</h2>
         <p class="text-center text-white">Flexible Financing Options to Drive Your Dream Car</p>
     </div>
 </section>
@@ -13,8 +13,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <div class="finance-content text-center">
-                    <h2>Drive Now, Pay Later</h2>
-                    <p>At Autocraft QLD, we believe that financing your dream car should be as smooth as driving it. We partner with leading financial institutions to offer you competitive rates and flexible terms. Our finance experts are here to guide you through every step of the process, ensuring you get a plan that fits your budget.</p>
+                    <h2 class="text-center">Drive Now, Pay Later</h2>
+                    <p class="text-center">At Autocraft QLD, we believe that financing your dream car should be as smooth as driving it. We partner with leading financial institutions to offer you competitive rates and flexible terms. Our finance experts are here to guide you through every step of the process, ensuring you get a plan that fits your budget.</p>
                 </div>
             </div>
         </div>
@@ -22,30 +22,30 @@
         <div class="row mt-5">
             <div class="col-lg-4 col-md-6">
                 <div class="feature-box1">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <h3>Competitive Rates</h3>
-                    <p>We offer some of the most competitive interest rates in the market, helping you save money over the life of your loan.</p>
+                    <i class="fas fa-hand-holding-usd text-center"></i>
+                    <h3 class="text-center">Competitive Rates</h3>
+                    <p class="text-center">We offer some of the most competitive interest rates in the market, helping you save money over the life of your loan.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="feature-box1">
-                    <i class="fas fa-file-signature"></i>
-                    <h3>Flexible Terms</h3>
-                    <p>Choose from a variety of loan terms to find a monthly payment that works for you. We offer plans from 24 to 72 months.</p>
+                    <i class="fas fa-file-signature text-center"></i>
+                    <h3 class="text-center">Flexible Terms</h3>
+                    <p class="text-center">Choose from a variety of loan terms to find a monthly payment that works for you. We offer plans from 24 to 72 months.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="feature-box1">
-                    <i class="fas fa-fast-forward"></i>
-                    <h3>Quick Approval</h3>
-                    <p>Our streamlined application process means you can get pre-approved in minutes, so you can shop with confidence.</p>
+                    <i class="fas fa-fast-forward text-center"></i>
+                    <h3 class="text-center">Quick Approval</h3>
+                    <p class="text-center">Our streamlined application process means you can get pre-approved in minutes, so you can shop with confidence.</p>
                 </div>
             </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-lg-12 text-center">
-                <h2>How It Works</h2>
+                <h2 class="text-center">How It Works</h2>
             </div>
             <div class="col-lg-10 offset-lg-1">
                 <div class="steps-timeline">

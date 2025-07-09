@@ -1,9 +1,9 @@
 <?= $this->extend('template') ?>
 
 <?= $this->section('content') ?>
-<section class="top_banner_section">
+<section class="top_banner">
     <div class="container">
-        <h1 class="text-center text-white">7-Day Money-Back Guarantee</h1>
+        <h2 class="text-center text-white">7-Day Money-Back Guarantee</h2>
         <p class="text-center text-white">Shop with Confidence</p>
     </div>
 </section>
