@@ -36,7 +36,7 @@ $routes->get('/sitemap.xml', 'SitemapController::index');
 
 
 $routes->match(['get', 'post'], 'login', 'LoginController::login');
-$routes->get('logout', 'LoginController::logout');*/
+$routes->get('logout', 'LoginController::logout');
 $routes->get('login', 'LoginController::login');
 
 /*----------ADMIN----------*/
