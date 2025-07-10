@@ -31,7 +31,7 @@
                     </div>
                     <div class="contact-text">
                         <h5>Address</h5>
-                        <p>128 Frances Street, Lidcombe NSW 2141</p>
+                        <p>170 Brisbane Road, Arundel QLD</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="contact-text">
                         <h5>Phone</h5>
-                        <p>+61-1-1234-5678</p>
+                        <p>07 5537 2900</p>
                     </div>
                 </div>
             </div>
@@ -92,13 +92,16 @@
             <ul class="footer-nav list-unstyled ">
                     <li class="nav-item">
                         <a target="_blank" class="nav-link" aria-current="page"
-                            href="<?=base_url('make/mazda')?>">Mazda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_blank" class="nav-link" href="<?=base_url('make/nissan')?>">Nissan</a>
+                            href="<?=base_url('make/toyota')?>">Toyota</a>
                     </li>
                     <li class="nav-item">
                         <a target="_blank" class="nav-link" href="<?=base_url('make/honda')?>">Honda</a>
+                    </li>
+                      <li class="nav-item">
+                        <a target="_blank" class="nav-link" href="<?=base_url('make/suzuki')?>">Suzuki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a target="_blank" class="nav-link" href="<?=base_url('make/nissan')?>">Nissan</a>
                     </li>
                     <li class="nav-item">
                         <a target="_blank" class="nav-link" href="<?=base_url('make/lexus')?>">Lexus</a>

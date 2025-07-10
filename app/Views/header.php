@@ -50,7 +50,7 @@
     <div class="top-bar">
         <div class="container d-flex justify-content-end align-items-center">
             <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="tel:+61112345678" class="text-white text-decoration-none"><i class="fas fa-phone me-2"></i>+61-1-1234-5678</a></li>
+                <li class="list-inline-item"><a href="tel:+61112345678" class="text-white text-decoration-none"><i class="fas fa-phone me-2"></i>0418 647 747</a></li>
                 <li class="list-inline-item"><a href="mailto:info@autocraftqld.com" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i>info@autocraftqld.com</a></li>
             </ul>
         </div>
