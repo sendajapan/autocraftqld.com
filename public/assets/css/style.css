@@ -90,6 +90,14 @@ html, body {
   padding: 120px 0;
 }
 
+.detail_top_banner{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url('../images/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; 
+  padding: 35px 0;
+}
+
 input[type="text"]:focus {
   background: var(--medium-grey-color) !important;
 }

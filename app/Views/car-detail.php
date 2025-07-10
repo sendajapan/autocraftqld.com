@@ -9,7 +9,7 @@
 
 
 <!-- hero section start  -->
-<section class="top_banner position-relative overflow-hidden">
+<section class="detail_top_banner position-relative overflow-hidden">
 
     <div class="container text-center">
         <div class="row">

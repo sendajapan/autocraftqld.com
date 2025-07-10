@@ -20,7 +20,7 @@
                     </div>
                     <div class="contact-text">
                         <h5>Email</h5>
-                        <p>info@autocraftqld.com</p>
+                        <p>peter@preferredautos.com.au</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="contact-text">
                         <h5>Phone</h5>
-                        <p>07 5537 2900</p>
+                        <p>0418 647 747</p>
                     </div>
                 </div>
             </div>
