@@ -26,13 +26,13 @@
         <div class="row">
 
         <div class="col-lg-3 col-md-12 sidebar-col mb-4">
-                <div class="sidebar-search px-4 rounded shadow-sm bg-light">
-                    <h4 class="sidebar-title mb-4 border-bottom pb-2">Search Vehicle</h4>
+                <div class="sidebar-search px-4 pb-4 rounded shadow-sm bg-light">
+                    <h4 class="sidebar-title border-bottom pb-2">Search Vehicle</h4>
                     <form action="<?= base_url('stock') ?>" method="post" id="form">
                         <div class="widget_inner">
                             <div class="search_widget_inner">
                                 <div class="row">
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select name="make" id="vehicle-make" class="form-select form-control">
                                             <option selected value="">Select Make</option>
                                             <?php if ($makes) {
@@ -46,7 +46,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select name="model" id="v_model" class="form-select form-control">
                                             <option value="">Select Model</option>
                                             <?php if ($models) {
@@ -60,7 +60,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="veh_condition" name="veh_condition" class="form-select form-control">
                                             <option value="">Select Condition</option>
                                             <?php foreach ($veh_condition as $item) {
@@ -74,7 +74,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="body_type" name="body_type" class="form-select form-control">
                                             <option value="">Select Body Type</option>
                                             <?php if ($body_types) {
@@ -88,7 +88,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="transmission" name="transmission" class="form-select form-control">
                                             <option value="">Select Transmission</option>
                                             <?php if ($transmissions) {
@@ -102,7 +102,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="exterior_color" name="exterior_color" class="form-select form-control">
                                             <option value="">Select color</option>
                                             <?php if ($colors) {
@@ -116,7 +116,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="fuel" name="fuel" class="form-select form-control">
                                             <option value="">Select Fuel</option>
                                             <?php if ($fuels) {
@@ -130,7 +130,7 @@
                                             } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="year_from" name="year_from" class="form-select form-control">
                                             <option value="">Year From</option>
                                             <?php for ($y = 2000; $y <= date("Y"); $y++) { ?>
@@ -138,7 +138,7 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-12 m-0">
                                         <select id="year_to" name="year_to" class="form-select form-control">
                                             <option value="">Year To</option>
                                             <?php for ($y = date("Y"); $y >= 2000; $y--) { ?>

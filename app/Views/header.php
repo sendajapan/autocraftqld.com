@@ -14,8 +14,8 @@
         }  
     ?>    
 
-    <link rel="icon" href="<?=base_url('public/assets/images/B1.png');?>" type="image/png">
-    <link rel="shortcut icon" href="<?=base_url('public/assets/images/B1.png');?>" type="image/png">
+    <link rel="icon" href="<?=base_url('public/assets/images/favicon.png');?>" type="image/png">
+    <link rel="shortcut icon" href="<?=base_url('public/assets/images/favicon.png');?>" type="image/png">
     <!--vendor css ================================================== -->
     <link rel="stylesheet" type="text/css" href="<?=base_url('public/assets/css/vendor.css')?>">
 
@@ -41,7 +41,6 @@
 
     <!-- Link Swiper's CSS -->
     <!-- <link rel="stylesheet" href="<?=base_url('public/assets/css/swiper-bundle.min.css')?>" /> -->
-
 
 </head>
 

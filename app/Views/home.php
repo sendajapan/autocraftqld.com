@@ -82,7 +82,7 @@
                 <div class="sidebar-search p-4 rounded shadow-sm bg-light">
                     <h4 class="sidebar-title mb-4 border-bottom pb-2">Search Vehicle</h4>
                     <form action="<?=base_url('stock')?>" method="post" class="row g-3" id="form2">
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select name="make" id="vehicle-make2" class="form-select form-control">
                                     <option selected value="">Make</option>
@@ -92,14 +92,14 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select name="model" id="v_model2" class="form-select form-control">
                                     <option value="">Model</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                             <select id="veh_condition" name="veh_condition" class="form-select form-control" id="vehicle">
                         <option selected>Condition</option>
@@ -110,7 +110,7 @@
                     </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select id="body_type" name="body_type" class="form-select form-control">
                                     <option value="">Body Type</option>
@@ -120,7 +120,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select id="transmission" name="transmission" class="form-select form-control">
                                     <option value="">Transmission</option>
@@ -130,7 +130,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select id="exterior_color" name="exterior_color" class="form-select form-control">
                                     <option value="">Color</option>
@@ -140,7 +140,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select id="fuel" name="fuel" class="form-select form-control">
                                     <option value="">Fuel</option>
@@ -150,7 +150,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select id="year_from" name="year_from" class="form-select form-control">
                                     <?php for($y=2000; $y<=date("Y"); $y++){ ?>
@@ -159,7 +159,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="input-group">
                                 <select id="year_to" name="year_to" class="form-select form-control">
                                     <?php for($y=date("Y"); $y>=2000; $y--){ ?>
@@ -168,7 +168,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 m-0">
                             <div class="d-grid" style="margin-top:10px">
                                 <input type="submit" name="submit" value="Search Car" class="car-search">
                             </div>
@@ -640,6 +640,12 @@
             </div>
         </div>
         <div class="brand-logos-container">
+            <div class="brand-logo">
+                <a href="<?=base_url('make/Suzuki')?>">
+                    <img src="<?=base_url('public/assets/images/makes/suzuki.png')?>" alt="Suzuki">
+                    <span class="brand-name">SUZUKI</span>
+                </a>
+            </div>
             <div class="brand-logo">
                 <a href="<?=base_url('make/Mazda')?>">
                     <img src="<?=base_url('public/assets/images/makes/mazda.png')?>" alt="Mazda">
