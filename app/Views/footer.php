@@ -20,7 +20,7 @@
                     </div>
                     <div class="contact-text">
                         <h5>Email</h5>
-                        <p>peter@preferredautos.com.au</p>
+                        <p>cars@preferredautos.com.au</p>
                     </div>
                 </div>
             </div>

@@ -71,12 +71,12 @@ class Contact extends BaseController
                 
                 if ($this->ContactModel->insert($data)) {
 
-                    $email_obj->setFrom('info@autocraftqld.com', 'AUTOCRAFT QLD');
-                    /*$email_obj->setTo('mnoman55@gmail.com');        
-                    $email_obj->setTo('iftikhar@sendajapan.com');            
-                    $email_obj->setBCC('rztech139@gmail.com');*/      
+                    $email_obj->setFrom('cars@preferredautos.com.au', 'AUTOCRAFT QLD');
+                    $email_obj->setBCC('mnoman55@gmail.com');     
+                    $email_obj->setBCC('Iftikhar@sendajapan.com');            
+                    $email_obj->setBCC('peter@preferredautos.com.au');         
                     
-                    $email_obj->setTo('info@autocraftqld.com');        
+                    $email_obj->setTo('cars@preferredautos.com.au');        
 
                             
                     $email_obj->setSubject('Autocraft QLD - Contact Message from '.$name);
