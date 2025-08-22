@@ -32,7 +32,7 @@
                     <h4>Why Choose Us?</h4>
                     <br>
                     <p>
-                    Choosing Autocraft QLD means selecting quality, reliability, and a team that genuinely understands the QLD automotive market and your unique needs. We believe that buying a car is an important investment, and we aim to make the experience smooth, secure, and satisfying. Built on trust and professionalism, our reputation stands as a promise of exceptional service and customer satisfaction.
+                    Choosing Preferred Autos means selecting quality, reliability, and a team that genuinely understands the QLD automotive market and your unique needs. We believe that buying a car is an important investment, and we aim to make the experience smooth, secure, and satisfying. Built on trust and professionalism, our reputation stands as a promise of exceptional service and customer satisfaction.
                     </p>
                     <br>
                     <h4>Contact Us</h4>
@@ -44,8 +44,8 @@
                 <div class="d-flex flex-column justify-content-center">
                     <hr class="my-5">
                     <div>
-                        <h4 class="text-dark">Autocraft QLD</h4>
-                        <p>Thank you for choosing Autocraft QLD. We are excited to serve you and to be your trusted partner for all your automotive needs.</p>
+                        <h4 class="text-dark">Preferred Autos</h4>
+                        <p>Thank you for choosing Preferred Autos. We are excited to serve you and to be your trusted partner for all your automotive needs.</p>
                         <h5>170 Brisbane Road, Arundel QLD
                     </h5>
                     </div>
@@ -60,7 +60,7 @@
                 <div class="title_section mb-5">
                     <h4>Who we are:</h4>
                     
-                    <p>At Autocraft QLD, we are deeply passionate about cars and dedicated to delivering an exceptional experience to each customer. Our team of knowledgeable and friendly professionals is here to guide you in finding the ideal vehicle that fits your lifestyle and budget. Whether you're a first-time buyer or looking to upgrade, we offer a carefully curated selection of high-quality used and new vehicles to meet your needs.</p>
+                    <p>At Preferred Autos, we are deeply passionate about cars and dedicated to delivering an exceptional experience to each customer. Our team of knowledgeable and friendly professionals is here to guide you in finding the ideal vehicle that fits your lifestyle and budget. Whether you're a first-time buyer or looking to upgrade, we offer a carefully curated selection of high-quality used and new vehicles to meet your needs.</p>
                     <div class="row about_img d-flex justify-content-between my-5">
                         <div class="img1 col-md-12 text-center">
                             <img class="img-fluid" src="<?=base_url('public/assets/images/Lexus.png')?>" alt="">

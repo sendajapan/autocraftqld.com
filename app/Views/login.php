@@ -35,7 +35,7 @@
             </a>
             
             <a class="brand" href="<?=base_url('admin/dashboard')?>">
-                Autocraft QLD lnc Administrative Panel
+                Preferred Autos lnc Administrative Panel
             </a>        
             
             <div class="nav-collapse">

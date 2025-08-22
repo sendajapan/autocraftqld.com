@@ -14,7 +14,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="finance-content text-center">
                     <h2 class="text-center">Drive Now, Pay Later</h2>
-                    <p class="text-center">At Autocraft QLD, we believe that financing your dream car should be as smooth as driving it. We partner with leading financial institutions to offer you competitive rates and flexible terms. Our finance experts are here to guide you through every step of the process, ensuring you get a plan that fits your budget.</p>
+                    <p class="text-center">At Preferred Autos, we believe that financing your dream car should be as smooth as driving it. We partner with leading financial institutions to offer you competitive rates and flexible terms. Our finance experts are here to guide you through every step of the process, ensuring you get a plan that fits your budget.</p>
                 </div>
             </div>
         </div>

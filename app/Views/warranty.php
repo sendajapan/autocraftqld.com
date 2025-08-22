@@ -16,7 +16,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="warranty-content text-center">
                     <h2 class="text-center">Comprehensive Warranty Coverage</h2>
-                    <p class="text-center">At Autocraft QLD, we stand by the quality of our vehicles. That's why every car we sell comes with a comprehensive warranty, giving you confidence and peace of mind on the road. Our warranty is designed to protect you from unexpected repair costs and ensure your vehicle remains in top condition.</p>
+                    <p class="text-center">At Preferred Autos, we stand by the quality of our vehicles. That's why every car we sell comes with a comprehensive warranty, giving you confidence and peace of mind on the road. Our warranty is designed to protect you from unexpected repair costs and ensure your vehicle remains in top condition.</p>
                 </div>
             </div>
         </div>

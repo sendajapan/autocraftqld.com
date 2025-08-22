@@ -94,9 +94,9 @@
                         <li class="nav-item">
                             <a class="<?= ($uri=='car-finance') ? 'active':''; ?> nav-link px-3" href="<?=base_url('car-finance')?>">Car Finance</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="<?= ($uri=='7-day-return') ? 'active':''; ?> nav-link px-3" href="<?=base_url('7-day-return')?>">7 Day Return</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="<?= ($uri=='contact') ? 'active':''; ?> nav-link px-3" href="<?=base_url('contact')?>">Contact Us </a>
                         </li>
