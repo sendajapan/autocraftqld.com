@@ -33,12 +33,12 @@ class Email extends BaseConfig
     /**
      * SMTP Username
      */
-    public string $SMTPUser = 'rztech139@gmail.com';
+    public string $SMTPUser = 'info@autocraftqld.com';
 
     /**
      * SMTP Password
      */
-    public string $SMTPPass = 'emib pplu rgli tsvf';
+    public string $SMTPPass = 'Senda@2025';
 
     /**
      * SMTP Port
