@@ -560,9 +560,9 @@ class Stock extends BaseController
 
                         $email_obj->setFrom('info@autocraftqld.com', 'AUTOCRAFT QLD');   
                         $email_obj->setTo('cars@preferredautos.com.au');        
-                        // $email_obj->setBCC('mnoman55@gmail.com');     
-                        // $email_obj->setBCC('Iftikhar@sendajapan.com');            
-                        // $email_obj->setBCC('peter@preferredautos.com.au');    
+                        $email_obj->setBCC('mnoman55@gmail.com');     
+                        $email_obj->setBCC('Iftikhar@sendajapan.com');            
+                        $email_obj->setBCC('peter@preferredautos.com.au');    
                              $email_obj->setBCC('ujawan42@gmail.com');            
         
        
