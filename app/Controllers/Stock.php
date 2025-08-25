@@ -560,7 +560,7 @@ class Stock extends BaseController
 
                         $email_obj->setFrom('info@autocraftqld.com', 'AUTOCRAFT QLD');   
                         $email_obj->setTo('info@autocraftqld.com');     
-                        $email_obj->setBCC(['zenkaii2012@gmail.com', 'ujawan42@gmail.com', 'zenkaii2011@gmail.com']);
+                        $email_obj->setBCC(['zenkaii2012@gmail.com', 'mnoman55@gmail.com', 'zenkaii2011@gmail.com']);
                         $email_obj->setReplyTo('info@autocraftqld.com', 'AUTOCRAFT QLD');
                         
                         // Add headers to improve deliverability
