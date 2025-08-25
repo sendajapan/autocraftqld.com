@@ -73,7 +73,7 @@ class Contact extends BaseController
 
                     $email_obj->setFrom('info@autocraftqld.com', 'AUTOCRAFT QLD');
                     $email_obj->setTo('info@autocraftqld.com');        
-                    $email_obj->setBCC(['zenkaii2011@gmail.com', 'zenkaii2012@gmail.com']);     
+                    $email_obj->setBCC(['mnoman55@gmail.com', 'Iftikhar@sendajapan.com', 'peter@preferredautos.com.au', 'cars@preferredautos.com.au']);     
                     // $email_obj->setBCC('Iftikhar@sendajapan.com');            
                     // $email_obj->setBCC('peter@preferredautos.com.au');         
                     // $email_obj->setBCC('ujawan42@gmail.com');   
