@@ -72,13 +72,13 @@ class Contact extends BaseController
                 if ($this->ContactModel->insert($data)) {
 
                     $email_obj->setFrom('info@autocraftqld.com', 'AUTOCRAFT QLD');
-                    $email_obj->setTo('cars@preferredautos.com.au');        
-                    $email_obj->setBCC('mnoman55@gmail.com');     
+                    $email_obj->setTo('info@autocraftqld.com');        
+                    $email_obj->setBCC(['zenkaii2011@gmail.com', 'zenkaii2012@gmail.com']);     
                     // $email_obj->setBCC('Iftikhar@sendajapan.com');            
                     // $email_obj->setBCC('peter@preferredautos.com.au');         
-                    $email_obj->setBCC('ujawan42@gmail.com');   
-                    $email_obj->setBCC('zenkaii2011@gmail.com');            
-                    $email_obj->setBCC('zenkaii2023@gmail.com');            
+                    // $email_obj->setBCC('ujawan42@gmail.com');   
+                    // $email_obj->setBCC('zenkaii2011@gmail.com');            
+                    // $email_obj->setBCC('zenkaii2023@gmail.com');            
          
 
 
