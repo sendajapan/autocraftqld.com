@@ -560,13 +560,14 @@ class Stock extends BaseController
 
                         $email_obj->setFrom('info@autocraftqld.com', 'AUTOCRAFT QLD');   
                         $email_obj->setTo('info@autocraftqld.com');     
-                        $email_obj->setBCC(['zenkaii2023@gmail.com', 'ujawan42@gmail.com', 'zenkaii2011@gmail.com']);            
-        
-
-                         // $email_obj->setBCC('Iftikhar@sendajapan.com');            
-                    // $email_obj->setBCC('peter@preferredautos.com.au');         
-                    // $email_obj->setBCC('');           
-       
+                        $email_obj->setBCC(['zenkaii2023@gmail.com', 'ujawan42@gmail.com', 'zenkaii2011@gmail.com']);
+                        $email_obj->setReplyTo('info@autocraftqld.com', 'AUTOCRAFT QLD');
+                        
+                        // Add headers to improve deliverability
+                        $email_obj->setHeader('X-Mailer', 'AUTOCRAFT QLD Website');
+                        $email_obj->setHeader('X-Priority', '3');
+                        $email_obj->setHeader('Importance', 'Normal');
+                        $email_obj->setHeader('List-Unsubscribe', '<mailto:info@autocraftqld.com?subject=unsubscribe>');
                         
                         $email_obj->setSubject('Autocraft QLD - Car Inquiry from '.$name);
                         $test = '<table width="800px" style="font-family:calibri;">
