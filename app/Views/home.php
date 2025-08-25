@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-12 col-sm-12 d-flex align-items-center">
                 <div class="detail mb-4">
-                    <p class="top-title"> WELCOME TO AUTOCRAFT QLD</p>
+                    <p class="top-title"> WELCOME TO PREFERRED AUTOS</p>
                     <h2>Get Your<span class="text-primary"> Dream Car </span></h2>
                     <p>Explore our carefully curated selection of vehicles from Japan, where quality meets style. Whether you're looking for a classic or a modern masterpiece, we've got you covered.</p>
                     <a href="<?=base_url('stock')?>" class="view-stock-btn">View Stock</a>
@@ -573,7 +573,7 @@
 <!------------------------------------- Why Choose Us Section Start ---------------------------------->
 <section class="why-choose-us-section py-5 mb-5">
     <div class="container">
-        <h2 class="section-title text-white text-center mb-5">Why Trust Autocraft QLD ?</h2>
+        <h2 class="section-title text-white text-center mb-5">Why Trust Preferred Autos ?</h2>
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="feature-card text-center p-4 h-100">
@@ -698,8 +698,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="about-content">
-                    <h2 class="section-title mb-3">About <span class="text-primary">Autocraft QLD</span></h2>
-                    <p class="mb-3">Autocraft QLD is committed to delivering excellence in the automotive industry. With a passion for quality, innovation, and customer satisfaction, we have become a trusted name for car enthusiasts and families alike.</p>
+                    <h2 class="section-title mb-3">About <span class="text-primary">Preferred Autos</span></h2>
+                    <p class="mb-3">Preferred Autos is committed to delivering excellence in the automotive industry. With a passion for quality, innovation, and customer satisfaction, we have become a trusted name for car enthusiasts and families alike.</p>
                     <ul class="list-unstyled mb-4 about-highlights">
                         <li><i class="fa-solid fa-circle-check text-primary me-2"></i> 2000+ Vehicles Delivered Nationwide</li>
                         <li><i class="fa-solid fa-circle-check text-primary me-2"></i> Dedicated Team of Automotive Experts</li>

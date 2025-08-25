@@ -123,7 +123,7 @@ class Home extends BaseController
         $data['request'] = $this->request;
         
 
-        $data['page_title'] = 'Autocraft QLD | Trusted Vehicle Importer/Exporter in QLD';
+        $data['page_title'] = 'Preferred Autos | Trusted Vehicle Importer/Exporter in QLD';
         $data['meta'] = home_meta();
 
         return view('home', $data);

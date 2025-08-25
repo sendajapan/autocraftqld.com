@@ -17,7 +17,7 @@
             <div class="widget-content">
               <div class="widget big-stats-container">
                 <div class="widget-content">
-                  <h6 class="bigstats">Wellcome to Autocraft QLD lnc Administrative Panel.</h6>
+                  <h6 class="bigstats">Wellcome to Preferred Autos lnc Administrative Panel.</h6>
                   
 
 				  

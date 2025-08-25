@@ -14,7 +14,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="return-content text-center">
                     <h2>Your Satisfaction is Our Priority</h2>
-                    <p>At Autocraft QLD, we want you to be completely satisfied with your purchase. If you're not happy with your vehicle for any reason, you can return it within 7 days for a full refund. Our 7-Day Money-Back Guarantee is designed to give you total peace of mind.</p>
+                    <p>At Preferred Autos, we want you to be completely satisfied with your purchase. If you're not happy with your vehicle for any reason, you can return it within 7 days for a full refund. Our 7-Day Money-Back Guarantee is designed to give you total peace of mind.</p>
                 </div>
             </div>
         </div>

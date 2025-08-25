@@ -76,9 +76,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?=base_url('warranty')?>">Warranty</a>
                     </li>
-                    <li class="nav-item">
+                   <!-- <li class="nav-item">
                         <a class="nav-link" href="<?=base_url('7-day-return')?>">7 Day Return</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="<?=base_url('car-finance')?>">Car Finance</a>
                     </li>
@@ -131,7 +131,7 @@
             </div>
 
             <div class="col-lg-3 col-md-7  col-sm-6 mb-5">
-                <h4 class="text-center">Join to get offer from Autocraft QLD </h4>
+                <h4 class="text-center">Join to get offer from Preferred Autos </h4>
                 <!-- <div class="email-container">
                 
                             <div class="email-input">

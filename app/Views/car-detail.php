@@ -27,7 +27,7 @@
 <div class="post-wrap no-padding-bottom bg-white">
     <div class="container">
 
-        <div class="row my-5">
+        <div class="row my-3">
             <main class="post-grid col-lg-9 col-md-12">
                 
                             <?php if($images){ ?>
@@ -63,9 +63,9 @@
 
                         
 
-                        <div class="post-content py-5">
+                        <div class="post-content py-2">
 
-                            <div class="overview my-5">
+                            <div class="overview my-3">
                                 <h3 class=" mb-4">Vehicle Overview</h3>
 
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-1">
@@ -404,7 +404,7 @@ var main = new Splide( '#main-carousel', {
     rewind    : true,
     pagination: false,
     arrows    : true,
-    heightRatio: 0.55
+    heightRatio: 0.7
   } );
 
 
