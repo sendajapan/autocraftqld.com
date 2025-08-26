@@ -49,8 +49,8 @@
     <div class="top-bar">
         <div class="container d-flex justify-content-end align-items-center">
             <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="tel:07 5537 2900" class="text-white text-decoration-none"><i class="fas fa-phone me-2"></i>07 5537 2900</a></li>
-                <li class="list-inline-item"><a href="mailto:cars@preferredautos.com.au" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i>cars@preferredautos.com.au</a></li>
+                <li class="list-inline-item"><a href="tel:07 5537 2900" class="text-white text-decoration-none d-flex align-items-center"><i class="fas fa-phone me-2"></i>07 5537 2900</a></li>
+                <li class="list-inline-item"><a href="mailto:cars@preferredautos.com.au" class="text-white text-decoration-none d-flex align-items-center"><i class="fas fa-envelope me-2"></i>cars@preferredautos.com.au</a></li>
             </ul>
         </div>
     </div>
