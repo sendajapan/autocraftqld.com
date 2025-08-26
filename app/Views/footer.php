@@ -42,7 +42,7 @@
                     </div>
                     <div class="contact-text">
                         <h5>Phone</h5>
-                        <p>(07) 5537 2900</p>
+                        <p>07 5537 2900</p>
                     </div>
                 </div>
             </div>
