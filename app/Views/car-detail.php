@@ -99,7 +99,7 @@
                                         </iconify-icon>
                                         <div class="ms-4 mt-2">
                                             <h6 class="fw-bold mb-0 mt-1 fs-6 text-body-emphasis">Fuel Type</h6>
-                                            <p><?=$veh['fuel']?></p>
+                                            <p><?= ($veh['fuel'] == 'Gasoline') ? 'Hybrid' : $veh['fuel'] ?></p>
                                         </div>
                                     </div>
                                     <div class="col d-flex align-items-start">

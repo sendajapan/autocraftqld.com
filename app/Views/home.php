@@ -268,7 +268,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -336,7 +336,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -370,7 +370,7 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" id="vehicleTabs" role="tablist">
                         <li class="nav-item" role="presentation">
-                                <button class="nav-link tab-btn active" id="gasoline-tab" data-bs-toggle="tab" data-bs-target="#gasoline" type="button" role="tab" aria-controls="gasoline" aria-selected="false">Gasoline</button>
+                                <button class="nav-link tab-btn active" id="gasoline-tab" data-bs-toggle="tab" data-bs-target="#gasoline" type="button" role="tab" aria-controls="gasoline" aria-selected="false">Hybrid</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link tab-btn" id="sedan-tab" data-bs-toggle="tab" data-bs-target="#sedan" type="button" role="tab" aria-controls="sedan" aria-selected="true">Sedan</button>
@@ -421,7 +421,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -481,7 +481,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -502,7 +502,7 @@
                                 </div>
                             </div>
 
-                            <!-- Gasoline Tab Pane -->
+                            <!-- Hybrid Tab Pane -->
                             <div class="tab-pane active" id="gasoline" role="tabpanel" aria-labelledby="gasoline-tab">
                                 <div class="row">
                                     <?php if($gasoline_vehicles){foreach($gasoline_vehicles as $key => $item){ if($key<3){?>
@@ -541,7 +541,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
