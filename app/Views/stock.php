@@ -320,7 +320,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div

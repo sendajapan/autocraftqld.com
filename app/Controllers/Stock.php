@@ -315,7 +315,9 @@ class Stock extends BaseController
             "handles" => ['LHD', 'RHD'],
             "veh_condition" => ['New', 'Used'],
             "colors" => $this->vehModel->where('exterior_color<>','')->distinct()->orderBy('exterior_color','ASC')->findColumn('exterior_color'),
-            "fuels" => $this->vehModel->where('fuel<>','')->distinct()->orderBy('fuel','ASC')->findColumn('fuel'),
+            "fuels" => array_map(function($fuel) {
+                return $fuel == 'Gasoline' ? 'Hybrid' : $fuel;
+            }, $this->vehModel->where('fuel<>','')->distinct()->orderBy('fuel','ASC')->findColumn('fuel')),
             "transmissions" => $this->vehModel->where('transmission<>','')->distinct()->orderBy('transmission','ASC')->findColumn('transmission'),
             "tractions" => $this->vehModel->where('traction<>','')->distinct()->orderBy('traction','ASC')->findColumn('traction'),
             "encoded" => $encoded,

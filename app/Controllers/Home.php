@@ -33,7 +33,11 @@ class Home extends BaseController
         $data['makes'] = $this->vehiclemodel->distinct()->where('make<>','')->orderBy('make','ASC')->findColumn('make');
         $data['body_types'] = $this->vehiclemodel->where('body_type<>','')->distinct()->orderBy('body_type','ASC')->findColumn('body_type');        
         $data['transmissions'] = $this->vehiclemodel->where('transmission<>','')->distinct()->orderBy('transmission','ASC')->findColumn('transmission');        
-        $data['fuels'] = $this->vehiclemodel->where('fuel<>','')->distinct()->orderBy('fuel','ASC')->findColumn('fuel');        
+        $fuels = $this->vehiclemodel->where('fuel<>','')->distinct()->orderBy('fuel','ASC')->findColumn('fuel');
+        // Replace 'Gasoline' with 'Hybrid' in the fuels array
+        $data['fuels'] = array_map(function($fuel) {
+            return $fuel == 'Gasoline' ? 'Hybrid' : $fuel;
+        }, $fuels);        
         $data['colors'] = $this->vehiclemodel->where('exterior_color<>','')->distinct()->orderBy('exterior_color','ASC')->findColumn('exterior_color');        
         $data['veh_condition'] = ['New', 'Used'];
         $new_arrivals = $this->vehiclemodel->where('display_website',1)

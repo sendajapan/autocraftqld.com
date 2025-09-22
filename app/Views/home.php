@@ -268,7 +268,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -336,7 +336,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -370,7 +370,7 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" id="vehicleTabs" role="tablist">
                         <li class="nav-item" role="presentation">
-                                <button class="nav-link tab-btn active" id="gasoline-tab" data-bs-toggle="tab" data-bs-target="#gasoline" type="button" role="tab" aria-controls="gasoline" aria-selected="false">Gasoline</button>
+                                <button class="nav-link tab-btn active" id="gasoline-tab" data-bs-toggle="tab" data-bs-target="#gasoline" type="button" role="tab" aria-controls="gasoline" aria-selected="false">Hybrid</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link tab-btn" id="sedan-tab" data-bs-toggle="tab" data-bs-target="#sedan" type="button" role="tab" aria-controls="sedan" aria-selected="true">Sedan</button>
@@ -421,7 +421,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -481,7 +481,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -502,7 +502,7 @@
                                 </div>
                             </div>
 
-                            <!-- Gasoline Tab Pane -->
+                            <!-- Hybrid Tab Pane -->
                             <div class="tab-pane active" id="gasoline" role="tabpanel" aria-labelledby="gasoline-tab">
                                 <div class="row">
                                     <?php if($gasoline_vehicles){foreach($gasoline_vehicles as $key => $item){ if($key<3){?>
@@ -541,7 +541,7 @@
                                                 <span><?=$item['exterior_color']?></span>
                                             </div>
                                             <div class="text-nowrap"><i class="fa-solid fa-gas-pump"></i>
-                                                <span><?=$item['fuel']?> </span>
+                                                <span><?= ($item['fuel'] == 'Gasoline') ? 'Hybrid' : $item['fuel'] ?> </span>
                                             </div>
                                         </div>
                                         <div
@@ -719,47 +719,69 @@
 <!-------------------------------- About Us Section End ---------------------------------->
 
 <!-------------------------------- Testimonials Section Start ---------------------------------->
-<section class="testimonials-section-v2 py-5">
+<section class="testimonials-section-v2 pt-5">
     <div class="container">
         <div class="row align-items-center mb-4">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h2 class="section-title">What Our <span class="text-primary">Customers</span> Say</h2>
-                            <div class="divider"></div>
-                            <div class="owl-nav custom-nav">
-                                <button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                                <button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button>
-                            </div>
-                        </div>
-        <div class="owl-carousel testimonial-carousel">
-        <?php foreach ($testimonials as $item) { ?>
-            <!-- Testimonial 1 -->
-            <div class="testimonial-item">
-                <div class="testimonial-header">
-                <img src="<?=base_url('public/assets/images/Sample_User_Icon.png')?>" alt="image" class="img-fluid">
-                    <div class="author-info">
-                        <h6 class="author-name"><?= $item['testimonial_by'] ?></h6>
-                        <p class="author-role">Customer</p>
-                    </div>
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-quote-right"></i>
-                    </div>
-                </div>
-                <p class="testimonial-body">
-                    <?= strlen($item['testimonial_desc']) > 100 ? substr($item['testimonial_desc'], 0, 100000) : $item['testimonial_desc'] ?>
-                </p>
-                <div class="star-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h2 class="section-title">What Our <span class="text-primary">Customers</span> Say</h2>
+                <div class="divider"></div>
+                <div class="owl-nav custom-nav">
+                    <button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
-          
-         <?php } ?>
+
+            <!-- Carousel -->
+            <div class="owl-carousel testimonial-carousel">
+                <?php 
+                $counter = 0;
+                foreach ($testimonials as $item) { 
+                    if ($counter % 2 == 0) { echo '<div class="testimonial-slide">'; } // open slide
+                ?>
+                    <div class="testimonial-item">
+                        <div class="testimonial-header">
+                            <img src="<?=base_url('public/assets/images/Sample_User_Icon.png')?>" alt="image" class="img-fluid">
+                            <div class="author-info">
+                                <h6 class="author-name"><?= $item['testimonial_by'] ?></h6>
+                                <p class="author-role">Customer</p>
+                            </div>
+                            <div class="quote-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-body">
+                            <span class="testimonial-text">
+                                <?php 
+                                    $full_text = $item['testimonial_desc'];
+                                    if(strlen($full_text) > 110) {
+                                        echo substr($full_text, 0, 110) . '...';
+                                        echo '<span class="testimonial-full-text" style="display:none;">' . substr($full_text, 110) . '</span>';
+                                        echo '<a href="javascript:void(0)" class="read-more-link text-primary"> Read More</a>';
+                                    } else {
+                                        echo $full_text;
+                                    }
+                                ?>
+                            </span>
+                        </p>
+                        <div class="star-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                <?php 
+                    $counter++;
+                    if ($counter % 2 == 0) { echo '</div>'; } // close slide
+                }
+                if ($counter % 2 != 0) { echo '</div>'; } // close last if odd count
+                ?>
+            </div>
         </div>
     </div>
 </section>
+
 <!-------------------------------- Testimonials Section End ---------------------------------->
 
 <!-------------------------------- Body Type Marquee Section Start ---------------------------------->
@@ -812,14 +834,35 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+        // Read More functionality
+        $(document).on('click', '.read-more-link', function() {
+            var testimonialText = $(this).closest('.testimonial-text');
+            var fullText = testimonialText.find('.testimonial-full-text').html();
+            var dots = testimonialText.text().endsWith('...') ? '...' : '';
+            
+            if($(this).text() === ' Read More') {
+                var newText = testimonialText.text().replace('...', '') + fullText;
+                testimonialText.html(newText + '<a href="javascript:void(0)" class="read-more-link text-primary"> Read Less</a>');
+            } else {
+                var truncatedText = testimonialText.text().substring(0, 110) + dots;
+                testimonialText.html(truncatedText + 
+                    '<span class="testimonial-full-text" style="display:none;">' + fullText + '</span>' +
+                    '<a href="javascript:void(0)" class="read-more-link text-primary"> Read More</a>');
+            }
+        });
+
         var testimonialCarousel = $(".testimonial-carousel");
         var itemCount = testimonialCarousel.children().length;
 
         testimonialCarousel.owlCarousel({
             loop: itemCount > 1,
-            margin:30,
-            nav:false,
+            margin: 30,
+            nav: false,
             dots: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            smartSpeed: 1000,
             responsive:{
                 0:{
                     items:1

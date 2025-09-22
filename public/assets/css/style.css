@@ -3186,3 +3186,15 @@ text-align: center;
 .testimonial-carousel .owl-stage-outer {
     padding: 10px 0;
 }
+
+.testimonial-slide {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack 2 testimonials vertically */
+    gap: 20px;
+}
+.testimonial-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
