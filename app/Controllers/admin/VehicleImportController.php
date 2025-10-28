@@ -67,11 +67,7 @@ class VehicleImportController extends BaseController
             return redirect()->to('admin/dashboard');
         }
     
-        // Delete existing stock, images, and features before importing new data
-        $this->VehicleImagesModel->where('veh_id >', 0)->delete();
-        $this->vehFeatureModel->where('veh_id >', 0)->delete();
-        $this->vehModel->where('veh_id >', 0)->delete();
-    
+        $imported_count = 0;
         foreach ($vehicles as $item) 
     {   
         // Skip if vehicle_id is missing
@@ -113,8 +109,20 @@ class VehicleImportController extends BaseController
                     'featured_image'   => isset($item['images'][0]) ? $item['images'][0] : null
                 ];
 
+                // Check if vehicle already exists
+            $existing = $this->vehModel->where('veh_id', $item['vehicle_id'])->first();
+            
+            if ($existing) {
+                // Update existing vehicle
+                $this->vehModel->update($item['vehicle_id'], $updated_item);
+                
+                // Delete old images and features for this vehicle
+                $this->VehicleImagesModel->where('veh_id', $item['vehicle_id'])->delete();
+                $this->vehFeatureModel->where('veh_id', $item['vehicle_id'])->delete();
+            } else {
                 // Insert new vehicle record
-            $this->vehModel->insert($updated_item);
+                $this->vehModel->insert($updated_item);
+            }
 
             // Insert Images
             if (isset($item['images']) && is_array($item['images'])) {
@@ -124,7 +132,7 @@ class VehicleImportController extends BaseController
                         'pic_url' => $img,
                         'pic_priority' => $key+1
                     ];
-                        $this->VehicleImagesModel->insert($images);
+                    $this->VehicleImagesModel->insert($images);
                 }
             }
 
@@ -202,10 +210,13 @@ class VehicleImportController extends BaseController
                 
                 $this->vehFeatureModel->insert($att_arr);
             }
+            
+            $imported_count++;
         }
     
             // Set success message and redirect
-            $this->session->setFlashdata('message', 'Vehicle stock imported successfully');
+            $total_vehicles = $this->vehModel->countAll();
+            $this->session->setFlashdata('message', "Vehicle stock imported successfully. Imported: {$imported_count} vehicles. Total in database: {$total_vehicles}");
             return redirect()->to('admin/dashboard');
             
         } catch (\Exception $e) {
