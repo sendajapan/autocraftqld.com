@@ -109,20 +109,16 @@ class VehicleImportController extends BaseController
                     'featured_image'   => isset($item['images'][0]) ? $item['images'][0] : null
                 ];
 
-                // Check if vehicle already exists
+                // Check if vehicle already exists (skip if it does, since API only sends new vehicles)
             $existing = $this->vehModel->where('veh_id', $item['vehicle_id'])->first();
             
             if ($existing) {
-                // Update existing vehicle
-                $this->vehModel->update($item['vehicle_id'], $updated_item);
-                
-                // Delete old images and features for this vehicle
-                $this->VehicleImagesModel->where('veh_id', $item['vehicle_id'])->delete();
-                $this->vehFeatureModel->where('veh_id', $item['vehicle_id'])->delete();
-            } else {
-                // Insert new vehicle record
-                $this->vehModel->insert($updated_item);
+                // Skip this vehicle as it already exists
+                continue;
             }
+            
+            // Insert new vehicle record
+            $this->vehModel->insert($updated_item);
 
             // Insert Images
             if (isset($item['images']) && is_array($item['images'])) {
