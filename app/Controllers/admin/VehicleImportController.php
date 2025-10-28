@@ -38,18 +38,34 @@ class VehicleImportController extends BaseController
 
     public function index()
     {
-        $db = db_connect();
-        $already_uploaded = $db->query('SELECT group_concat(veh_id) as result FROM tbl_vehicles')->getResultArray();
-        $url = 'http://senda.us/autocraft/avisnew/page_include/scripts/autocraft_qld_website_stock.php';
-        $data = $already_uploaded[0]['result'];
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        $result = curl_exec($curl);
-        curl_close($curl);
-        $vehicles = json_decode($result, true);
+        try {
+            $db = db_connect();
+            $already_uploaded = $db->query('SELECT group_concat(veh_id) as result FROM tbl_vehicles')->getResultArray();
+            $url = 'http://senda.us/autocraft/avisnew/page_include/scripts/autocraft_qld_website_stock.php';
+            $data = $already_uploaded[0]['result'] ?? '';
+            
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+            $result = curl_exec($curl);
+            
+            if (curl_errno($curl)) {
+                curl_close($curl);
+                $this->session->setFlashdata('error', 'Failed to connect to API');
+                return redirect()->to('admin/dashboard');
+            }
+            
+            curl_close($curl);
+            $vehicles = json_decode($result, true);
+    
+        // Check if vehicles data is valid
+        if (!is_array($vehicles) || empty($vehicles)) {
+            $this->session->setFlashdata('error', 'No vehicles available to import');
+            return redirect()->to('admin/dashboard');
+        }
     
         // Delete existing stock, images, and features before importing new data
         $this->VehicleImagesModel->where('veh_id >', 0)->delete();
@@ -57,60 +73,63 @@ class VehicleImportController extends BaseController
         $this->vehModel->where('veh_id >', 0)->delete();
     
         foreach ($vehicles as $item) 
-        {   
-            // if(count($item['images']) > 0){
-                $updated_item = [
-                    'veh_id'           => $item['vehicle_id'],
-                    'stock_no'         => "SA-".$item['vehicle_id'],
-                    'chassis'          => $item['veh_chassis_model']."-".$item['veh_chassis_number'],
-                    'engine_no'        => $item['veh_engine_number'],
-                    'engine_type'      => $item['veh_engine_type'],
-                    'body_type'        => $item['body_type'],
-                    'model'            => $item['model_name'],
-                    'make'             => $item['make_name'],
-                    'year'             => $item['veh_year'],
-                    'fuel'             => $item['veh_fuel'],
-                    'traction'         => $item['veh_traction'],
-                    'drive'            => $item['veh_drive'],
-                    'month'            => $item['lookupitem_id_veh_manufactured_month'],
+    {   
+        // Skip if vehicle_id is missing
+        if (!isset($item['vehicle_id'])) {
+            continue;
+        }
+        
+        $updated_item = [
+                    'veh_id'           => $item['vehicle_id'] ?? '',
+                'stock_no'         => "SA-".($item['vehicle_id'] ?? ''),
+                    'chassis'          => ($item['veh_chassis_model'] ?? '')."-".($item['veh_chassis_number'] ?? ''),
+                'engine_no'        => $item['veh_engine_number'] ?? '',
+                'engine_type'      => $item['veh_engine_type'] ?? '',
+                'body_type'        => $item['body_type'] ?? '',
+                'model'            => $item['model_name'] ?? '',
+                'make'             => $item['make_name'] ?? '',
+                'year'             => $item['veh_year'] ?? '',
+                'fuel'             => $item['veh_fuel'] ?? '',
+                'traction'         => $item['veh_traction'] ?? '',
+                'drive'            => $item['veh_drive'] ?? '',
+                'month'            => $item['lookupitem_id_veh_manufactured_month'] ?? '',
                     'status'           => 'AVAILABLE',
-                    'doors'            => $item['veh_door'],
-                    'seats'            => $item['veh_passenger'],
-                    'cc'               => $item['veh_cc'],
-                    'mileage'          => $item['veh_km'],
-                    'transmission'     => $item['veh_t_m'],
-                    'gross_weight'     => $item['veh_gross_weight'],
-                    'net_weight'       => $item['veh_net_weight'],
-                    'length'           => $item['veh_l'],
-                    'width'            => $item['veh_w'],
-                    'height'           => $item['veh_h'],
-                    'm3'               => $item['veh_m3'],
-                    'model_grade'      => $item['lookupitem_id_grade'],
-                    'exterior_color'   => $item['veh_color'],
+                    'doors'            => $item['veh_door'] ?? '',
+                'seats'            => $item['veh_passenger'] ?? '',
+                'cc'               => $item['veh_cc'] ?? '',
+                'mileage'          => $item['veh_km'] ?? '',
+                'transmission'     => $item['veh_t_m'] ?? '',
+                'gross_weight'     => $item['veh_gross_weight'] ?? '',
+                'net_weight'       => $item['veh_net_weight'] ?? '',
+                'length'           => $item['veh_l'] ?? '',
+                'width'            => $item['veh_w'] ?? '',
+                'height'           => $item['veh_h'] ?? '',
+                'm3'               => $item['veh_m3'] ?? '',
+                'model_grade'      => $item['lookupitem_id_grade'] ?? '',
+                'exterior_color'   => $item['veh_color'] ?? '',
                     'display_website'  => '1',
                     'added_on'         => date("Y-m-d H:i:s"),
                     'updated_on'       => date("Y-m-d H:i:s"),
                     'featured_image'   => isset($item['images'][0]) ? $item['images'][0] : null
                 ];
 
-                // echo "<pre>"; print_r($updated_item); echo "</pre>"; exit;
-    
                 // Insert new vehicle record
-                $this->vehModel->insert($updated_item);
-    
-                // Insert Images
+            $this->vehModel->insert($updated_item);
+
+            // Insert Images
+            if (isset($item['images']) && is_array($item['images'])) {
                 foreach($item['images'] as $key => $img) {
                     $images = [
                         'veh_id' => $item['vehicle_id'],
                         'pic_url' => $img,
                         'pic_priority' => $key+1
                     ];
-                    $this->VehicleImagesModel->insert($images);
+                        $this->VehicleImagesModel->insert($images);
                 }
-    
-                // Insert Features
-                $att_arr = [];
-                foreach($item['options'] as $key => $val) {
+            }
+
+            // Insert Features
+            if (isset($item['options']) && is_array($item['options'])) {
                     $att_arr = [
                         'veh_id' => $item['vehicle_id'], 
                         'AC' => $item['options']['veh_a_c'] ?? '',
@@ -179,9 +198,8 @@ class VehicleImportController extends BaseController
                         'four_disc_brake' => $item['options']['four_disc_brake'] ?? '',
                         'difflock' => $item['options']['difflock'] ?? '',
                         'spare_key' => $item['options']['spare_key'] ?? ''
-                    ];
-                    
-                // }
+                ];
+                
                 $this->vehFeatureModel->insert($att_arr);
             }
         }
@@ -189,13 +207,13 @@ class VehicleImportController extends BaseController
         // Set success message and redirect
         $this->session->setFlashdata('message', 'Vehicle stock imported successfully');
         return redirect()->to('admin/dashboard');
+        
+    } catch (\Exception $e) {
+        // Log error and show user-friendly message
+        log_message('error', 'Vehicle Import Error: ' . $e->getMessage());
+        $this->session->setFlashdata('error', 'Import failed. Please try again later.');
+        return redirect()->to('admin/dashboard');
     }
-    
-    
-
-
-
-
 
 
 }
