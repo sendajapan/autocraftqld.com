@@ -204,16 +204,19 @@ class VehicleImportController extends BaseController
             }
         }
     
-        // Set success message and redirect
-        $this->session->setFlashdata('message', 'Vehicle stock imported successfully');
-        return redirect()->to('admin/dashboard');
-        
-    } catch (\Exception $e) {
-        // Log error and show user-friendly message
-        log_message('error', 'Vehicle Import Error: ' . $e->getMessage());
-        $this->session->setFlashdata('error', 'Import failed. Please try again later.');
-        return redirect()->to('admin/dashboard');
+            // Set success message and redirect
+            $this->session->setFlashdata('message', 'Vehicle stock imported successfully');
+            return redirect()->to('admin/dashboard');
+            
+        } catch (\Exception $e) {
+            // Log error and show user-friendly message
+            log_message('error', 'Vehicle Import Error: ' . $e->getMessage());
+            $this->session->setFlashdata('error', 'Import failed. Please try again later.');
+            return redirect()->to('admin/dashboard');
+        }
     }
+    
+    
 
 
 }
