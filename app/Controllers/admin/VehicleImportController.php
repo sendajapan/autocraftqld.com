@@ -113,7 +113,6 @@ class VehicleImportController extends BaseController
             $existing = $this->vehModel->where('veh_id', $item['vehicle_id'])->first();
             
             if ($existing) {
-                // Skip this vehicle as it already exists
                 continue;
             }
             
