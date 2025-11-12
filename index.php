@@ -2,28 +2,6 @@
 
 /*
  *---------------------------------------------------------------
- * DOMAIN REDIRECT
- *---------------------------------------------------------------
- * Redirect all autocraftqld.com requests to preferredautos.com.au
- */
-
-// Get the current domain and request URI
-$currentDomain = $_SERVER['HTTP_HOST'] ?? '';
-$requestUri = $_SERVER['REQUEST_URI'] ?? '/';
-
-// Check if the current domain is autocraftqld.com (with or without www)
-if (strpos($currentDomain, 'autocraftqld.com') !== false) {
-    // Build the new URL with preferredautos.com.au
-    $newUrl = 'https://preferredautos.com.au' . $requestUri;
-    
-    // Perform 301 permanent redirect
-    header('HTTP/1.1 301 Moved Permanently');
-    header('Location: ' . $newUrl);
-    exit();
-}
-
-/*
- *---------------------------------------------------------------
  * CHECK PHP VERSION
  *---------------------------------------------------------------
  */
